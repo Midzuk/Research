@@ -87,10 +87,7 @@ longestLinkCsv lc =
       let
         (lcs1, lcs2) = V.partition (any (\(link_, _) -> isNextLink link_ link || isNextLink link link_)) lcs
       in
-        if V.null lcs1 then
-          go lci $ V.cons [lwc] lcs2
-        else
-          go lci $ V.cons (V.cons lwc $ foldr1 (<>) lcs1) lcs2
+        go lci $ V.cons (V.cons lwc $ foldr (<>) [] lcs1) lcs2
 
 
 totalDistance :: LinkCsv -> Double
