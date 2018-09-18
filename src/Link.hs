@@ -148,3 +148,12 @@ inverseNetwork = Map.foldrWithKey (\(n1 :->: n2) (Link _ c) n -> Map.insert (n2 
 
 invertOD :: OD -> OD
 invertOD (n1 :->: n2) = n2 :->: n1
+
+overlap :: Graph -> Graph -> Bool
+overlap (Edge od1) (Edge od2) = od1 == od2
+overlap (Edge od) g@(Graph v) = V.elem od v
+overlap g@(Graph v) (Edge od) = V.elem od v
+overlap g1@(Graph v1) g2@(Graph v2) = not . V.null $ V.filter (`V.elem` v1) v2
+
+overlapLink :: Link -> Link -> Bool
+overlapLink (Link g1 _) (Link g2 _) = overlap g1 g2

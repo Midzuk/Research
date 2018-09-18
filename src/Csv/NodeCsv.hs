@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+
 module Csv.NodeCsv where
 
 import qualified Data.ByteString.Lazy as B
@@ -39,6 +40,13 @@ makeNodeCsv :: V.Vector NodeCsvOut -> NodeCsv
 makeNodeCsv ncos = V.foldr f Map.empty ncos
   where
     f (NodeCsvOut n lat long) = Map.insert n (lat, long)
+
+encodeNodeCsv :: NodeCsv -> String
+encodeNodeCsv nc = 
+  "Node,Lat,Long"
+    <> Map.foldrWithKey
+      (\node_ (lat_, long_) str_ -> str_ <> "\n" <> show node_ <> "," <> show lat_ <> "," <> show long_)
+        "" nc
 
 {-
 type NodeCsvMap =

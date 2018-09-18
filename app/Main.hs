@@ -3,13 +3,15 @@ module Main where
 
 import           Algorithm.FrankWolfe
 import           Algorithm.Search
-import           Csv.LinkCsv          (decodeLinkCsv, makeLinkCsv)
-import           Csv.NodeCsv          (decodeNodeCsv, makeNodeCsv)
+import           Csv.LinkCsv          (decodeLinkCsv, makeLinkCsv, encodeLinkCsv)
+import           Csv.NodeCsv          (decodeNodeCsv, makeNodeCsv, encodeNodeCsv)
 import qualified Data.Map.Strict      as Map
 import qualified Data.Set             as Set
 import           Link
 import           System.IO.Unsafe
 import Csv.NetworkCsv (NetworkCsv(..), simplifyNetworkCsv)
+import qualified System.Directory as Dir
+
 
 --import           System.Random
 --import           Data.Semigroup
@@ -19,7 +21,11 @@ main = do
   lc <- decodeLinkCsv "output_links.csv"
   nc <- decodeNodeCsv "output_nodes.csv"
   let nwc = NetworkCsv lc nc
-  print $ simplifyNetworkCsv nwc
+  let NetworkCsv slc snc = simplifyNetworkCsv nwc
+  
+  cd <- Dir.getCurrentDirectory
+  writeFile (cd <> "/output/simpleLink.csv") $ encodeLinkCsv slc
+  writeFile (cd <> "/output/simpleNode.csv") $ encodeNodeCsv snc
   --print $ shortestPath network
   --print $ frankWolfe 0.01 trip linkParameter
 --searchMin 0.01 (\x -> (x - 1) ^ 2 + 12) (0,10)

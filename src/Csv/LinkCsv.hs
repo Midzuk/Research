@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedLists   #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ViewPatterns #-}
 
 module Csv.LinkCsv where
 
@@ -10,7 +11,7 @@ import qualified Data.Map.Strict      as Map
 import           Data.Maybe           (isJust)
 import qualified Data.Text            as T
 import qualified Data.Vector          as V
-import           Link                 (Graph (..), Link (..), OD (..))
+import           Link                 (Graph (..), Link (..), OD (..), composeLink, compose)
 import qualified System.Directory     as Dir
 
 type Node = Int
@@ -63,6 +64,21 @@ makeLinkCsv lcos = V.foldr f [] lcos
       where
         linkOD = (Link (Edge (org :->: dest)) dist, (highway, bridge, width))
         linkDO = (Link (Edge (dest :->: org)) dist, (highway, bridge, width))
+
+showMaybe :: Show a => Maybe a -> String
+showMaybe (Just a) = show a
+showMaybe Nothing = ""
+
+encodeLinkCsv :: LinkCsv -> String
+encodeLinkCsv lc =
+  "Orgin,Destination,Distance,Highway,Bridge,Width"
+    <> V.foldr
+      (\(Link g dist, (highway_, bridge_, width_)) str_ ->
+        let
+          org_ :->: dest_ = compose g
+        in 
+          str_ <> "\n" <> show org_ <> "," <> show dest_ <> "," <> show dist <> "," <> showMaybe highway_ <> "," <> showMaybe bridge_ <> "," <> showMaybe width_)
+            "" lc
 
 {-
 makeLinkCsvMap :: V.Vector LinkCsv -> LinkCsvMap

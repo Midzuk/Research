@@ -7,7 +7,7 @@
 module Csv.NetworkCsv where
 
 import           Control.Monad.State.Strict (State, evalState, execState,
-                                             runState, state)
+                                             runState, state, put, get)
 import           Csv.LinkCsv                (LinkCsv, LinkCond, LinkWithCond)
 import           Csv.NodeCsv                (NodeCsv)
 import qualified Data.Map.Strict            as Map
@@ -15,7 +15,6 @@ import qualified Data.Vector                as V
 import           Link
 import           Data.Maybe (fromJust)
 import qualified Data.Set as Set
-
 --
 
 data NetworkCsv = NetworkCsv LinkCsv NodeCsv deriving (Show)
@@ -38,21 +37,64 @@ simplifyLinkCsv :: LinkCsv -> LinkCsv
 simplifyLinkCsv = V.foldr f []
   where
     --Nothing (交差点および行き止まり) を無視して和を計算
+
     f :: LinkWithCond -> LinkCsv -> LinkCsv
-    f lwc@(link, cond) lco = V.cons (fromJust $ g1 lwc lco <> Just link <> g2 lwc lco, cond) lco
+    f lwc@(link, cond) lc =
+      (`execState` lc) $
+        do
+          maybeLink1 <- g1 lwc
+          maybeLink2 <- g2 lwc
+          lc_ <- get
+          put $ V.cons (fromJust $ maybeLink1 <> Just link <> maybeLink2, cond) lc_
+
+    {-
+    f :: LinkWithCond -> LinkCsv -> LinkCsv
+    f lwc@(link, cond) lco =
+      let
+        (maybeLink1, lc1) = g1 lwc lco
+        (maybeLink2, lc2) = g2 lwc lc1
+        linkSimple = fromJust $ maybeLink1 <> Just link <> maybeLink2
+      in
+        V.cons linkSimple $ V.filter (\(l_, _) -> not $ overlapLink linkSimple l_) lc2
+    -}
+    g1 :: LinkWithCond -> State LinkCsv (Maybe Link)
+    g1 (link, cond) =
+      state $ \lc ->
+        case V.partition (\(link_, cond_) -> isNextLink link_ link) lc of
+          ([(link1, cond1)], lc1) ->
+            if cond == cond1
+              then (Just link1, lc1)
+              else (Nothing, lc)
+          _            -> (Nothing, lc)
     
-    g1 :: LinkWithCond -> LinkCsv -> Maybe Link
-    g1 lwc@(link, cond) lco =
-      case V.filter (\(link_, cond_) -> isNextLink link_ link && cond == cond_) lco of
-        [(link1, _)] -> Just link1
-        _            -> Nothing
+    g2 :: LinkWithCond -> State LinkCsv (Maybe Link)
+    g2 (link, cond) =
+      state $ \lc ->
+        case V.partition (\(link_, cond_) -> isNextLink link link_ && cond == cond_) lc of
+          ([(link2, cond2)], lc2) ->
+            if cond == cond2
+              then (Just link2, lc2)
+              else (Nothing, lc)
+          _            -> (Nothing, lc)
+    {-
+    g1 :: LinkWithCond -> LinkCsv -> (Maybe Link, LinkCsv)
+    g1 (link, cond) lc =
+      case V.partition (\(link_, cond_) -> isNextLink link_ link) lc of
+        ([(link1, cond1)], lc1) ->
+          if cond == cond1
+            then (Just link1, lc1)
+            else (Nothing, lc)
+        _            -> (Nothing, lc)
 
     g2 :: LinkWithCond -> LinkCsv -> Maybe Link
-    g2 lwc@(link, cond) lco =
-      case V.filter (\(link_, cond_) -> isNextLink link link_ && cond == cond_) lco of
-        [(link2, _)] -> Just link2
-        _            -> Nothing
-
+    g2 (link, cond) lc =
+      case V.partition (\(link_, cond_) -> isNextLink link link_ && cond == cond_) lc of
+        ([(link2, cond2)], lc2) ->
+          if cond == cond2
+            then (Just link2, lc2)
+            else (Nothing, lc)
+        _            -> (Nothing, lc)
+    -}
     
 {-
 --simplify :: Link -> LinkCsv -> NetworkCsv -> (LinkCsv, NetworkCsv)
