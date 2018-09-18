@@ -16,7 +16,7 @@ import           Link
 import           Data.Maybe (fromJust)
 import qualified Data.Set as Set
 
-
+--
 
 data NetworkCsv = NetworkCsv LinkCsv NodeCsv deriving (Show)
 type NetworkCsvInput = NetworkCsv
