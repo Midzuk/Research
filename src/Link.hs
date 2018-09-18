@@ -67,7 +67,7 @@ data Graph = Edge OD | Graph (V.Vector OD) deriving Show
 
 compose :: Graph -> OD
 compose (Edge od) = od
-compose (Graph v) = V.foldr1 (<>) v
+compose (Graph v) = foldr1 (<>) v
 
 composeLink :: Link -> OD
 composeLink (Link g _) = compose g
@@ -109,15 +109,16 @@ isNextLink (Link g1 _) (Link g2 _) = isNextGraph g1 g2
 
 isNextGraph :: Graph -> Graph -> Bool
 isNextGraph (Edge od1) (Edge od2)       = isNextOD od1 od2
-isNextGraph (Edge od) g@(Graph v)       = isNextOD od (compose g) && V.notElem (invertOD od) v
-isNextGraph g@(Graph v) (Edge od)       = isNextOD (compose g) od && V.notElem (invertOD od) v
-isNextGraph g1@(Graph v1) g2@(Graph v2) = isNextOD (compose g1) (compose g2) && Set.null (Set.intersection (nodeSet g1) (nodeSet g2))
+isNextGraph (Edge od) g@(Graph v)       = isNextOD od (compose g) && notElem (invertOD od) v -- && V.notElem od v
+isNextGraph g@(Graph v) (Edge od)       = isNextOD (compose g) od && notElem (invertOD od) v -- && V.notElem od v
+isNextGraph g1@(Graph v1) g2@(Graph v2) = isNextOD (compose g1) (compose g2) && (not $ any (`elem` v1) v2) && (not $ any (`elem` v1) (invertOD <$> v2))
 
-
+--Set.null (Set.intersection (nodeSet g1) (nodeSet g2))
+{-
 nodeSet :: Graph -> Set.Set Node
 nodeSet (Edge (n1 :->: n2)) = Set.fromList [n1, n2]
 nodeSet (Graph v@(V.head -> (n1 :->: _))) = V.foldr (\(_ :->: n2) s -> Set.insert n2 s) [n1] v
-
+-}
 
 isNextOD :: OD -> OD -> Bool
 isNextOD (n1 :->: n2) (n3 :->: n4) = n2 == n3 && n1 /= n4
@@ -151,9 +152,9 @@ invertOD (n1 :->: n2) = n2 :->: n1
 
 overlap :: Graph -> Graph -> Bool
 overlap (Edge od1) (Edge od2) = od1 == od2
-overlap (Edge od) g@(Graph v) = V.elem od v
-overlap g@(Graph v) (Edge od) = V.elem od v
-overlap g1@(Graph v1) g2@(Graph v2) = not . V.null $ V.filter (`V.elem` v1) v2
+overlap (Edge od) g@(Graph v) = elem od v
+overlap g@(Graph v) (Edge od) = elem od v
+overlap g1@(Graph v1) g2@(Graph v2) = any (`elem` v1) v2
 
 overlapLink :: Link -> Link -> Bool
 overlapLink (Link g1 _) (Link g2 _) = overlap g1 g2

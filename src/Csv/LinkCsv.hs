@@ -56,7 +56,7 @@ type LinkCsv =
   --Map.Map OD (Dist, LinkCond)
 
 makeLinkCsv :: V.Vector LinkCsvOut -> LinkCsv
-makeLinkCsv lcos = V.foldr f [] lcos
+makeLinkCsv lcos = foldr f [] lcos
   where
     f (LinkCsvOut org dest dist highway oneway bridge width)
       | isJust oneway = V.cons linkOD
@@ -72,7 +72,7 @@ showMaybe Nothing = ""
 encodeLinkCsv :: LinkCsv -> String
 encodeLinkCsv lc =
   "Orgin,Destination,Distance,Highway,Bridge,Width"
-    <> V.foldr
+    <> foldr
       (\(Link g dist, (highway_, bridge_, width_)) str_ ->
         let
           org_ :->: dest_ = compose g

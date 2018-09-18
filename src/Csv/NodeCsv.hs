@@ -37,7 +37,7 @@ type NodeCsv =
   Map.Map Node (Lat, Long)
 
 makeNodeCsv :: V.Vector NodeCsvOut -> NodeCsv
-makeNodeCsv ncos = V.foldr f Map.empty ncos
+makeNodeCsv ncos = foldr f Map.empty ncos
   where
     f (NodeCsvOut n lat long) = Map.insert n (lat, long)
 
