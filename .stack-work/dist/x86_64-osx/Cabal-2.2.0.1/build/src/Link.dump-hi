@@ -1,0 +1,1438 @@
+
+==================== FINAL INTERFACE ====================
+2018-09-18 03:56:20.35262 UTC
+
+interface research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf:Link 8043
+  interface hash: 30e006449be02da97a7e4d11cfb56c94
+  ABI hash: 36270363ad7f412211c4e09ae502a585
+  export-list hash: 105fd085ce7618b18ef07ad8e01e8736
+  orphan hash: 9d6e66361c99db728c8b6b861d98977b
+  flag hash: bf7509cae04b9ef28745070dfdb14074
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Link.compose
+  Link.composeLink
+  Link.insertLink
+  Link.inverseNetwork
+  Link.invertOD
+  Link.isNextGraph
+  Link.isNextLink
+  Link.isNextOD
+  Link.networkFromList
+  Link.nodeSet
+  Link.shortestPath
+  Link.Cost
+  Link.Graph{Link.Edge Link.Graph}
+  Link.Link{Link.Link}
+  Link.Network
+  Link.Node
+  Link.OD{Link.:->:}
+  Link.Path
+module dependencies:
+package dependencies: array-0.5.2.0 base-4.11.1.0
+                      containers-0.5.11.0 deepseq-1.4.3.0 ghc-prim-0.5.2.0
+                      integer-gmp-1.0.2.0 primitive-0.6.3.0 transformers-0.5.5.0
+                      vector-0.12.0.1
+orphans: vector-0.12.0.1:Data.Vector.Fusion.Bundle
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Complex base-4.11.1.0:Data.Functor.Compose
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Set.Internal
+                         primitive-0.6.3.0:Control.Monad.Primitive
+                         primitive-0.6.3.0:Data.Primitive.Array vector-0.12.0.1:Data.Vector
+import  -/  base-4.11.1.0:Data.Foldable 8ed35c38958063956af33c935ea03444
+import  -/  base-4.11.1.0:Data.Functor f522c3501272159820fd6f242510732f
+import  -/  base-4.11.1.0:Data.Semigroup 6cec65b3e80c1fda845c902576adfbbd
+import  -/  base-4.11.1.0:Debug.Trace 3062f7167e3b4d38ffd41be499676d90
+import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
+import  -/  base-4.11.1.0:GHC.Err 5e26aa744981f14e0f1e4d29c44ac52e
+import  -/  base-4.11.1.0:GHC.Num 8e54b26dce4495382dc4b50cf36ab754
+import  -/  base-4.11.1.0:GHC.Show 73be67392447c974f19c3befd83c46c0
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  containers-0.5.11.0:Data.Map.Internal 0150e210d0ae8df0f3a0669d5e32d8fa
+import  -/  containers-0.5.11.0:Data.Map.Strict 40ac55e8c7db7b7f0f7e3d9769233909
+import  -/  containers-0.5.11.0:Data.Map.Strict.Internal 372117aaabc2f1ff2039eaf324fdb5c6
+import  -/  containers-0.5.11.0:Data.Set 7d3c64a641be4cacbcd8119445bab919
+import  -/  containers-0.5.11.0:Data.Set.Internal 93fa3ef95853aa2a7aadf32d693bd451
+import  -/  ghc-prim-0.5.2.0:GHC.Classes 122abfcd7450c6c11602933c9ca5f80d
+import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
+import  -/  vector-0.12.0.1:Data.Vector a3a00743437ee8354b7b63f8638591df
+fixities infixr 5 :->:
+a81454e5043b1dcccfa563465ff4ffef
+  $fEqGraph :: GHC.Classes.Eq Link.Graph
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.Graph Link.$fEqGraph_$c== Link.$fEqGraph_$c/= -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fEqGraph_$c/= :: Link.Graph -> Link.Graph -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>, Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Link.Graph) (y :: Link.Graph) ->
+                 case Link.$fEqGraph_$c== x y of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fEqGraph_$c== :: Link.Graph -> Link.Graph -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (g1 :: Link.Graph) (g2 :: Link.Graph) ->
+                 case Link.compose g1 of wild { Link.:->: a1 a2 ->
+                 case Link.compose g2 of wild1 { Link.:->: b1 b2 ->
+                 case a1 of wild2 { GHC.Types.I# x ->
+                 case b1 of wild3 { GHC.Types.I# y ->
+                 case GHC.Prim.==# x y of lwild {
+                   DEFAULT -> GHC.Types.False
+                   1# -> GHC.Classes.eqInt a2 b2 } } } } }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fEqLink :: GHC.Classes.Eq Link.Link
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.Link Link.$fEqLink_$c== Link.$fEqLink_$c/= -}
+e5397a8dd2b204020630100edccfb9d2
+  $fEqLink_$c/= :: Link.Link -> Link.Link -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <S(SL),1*U(1*U,1*U(U))><S(SL),1*U(1*U,1*U(U))>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Link.Link) (y :: Link.Link) ->
+                 case x of wild { Link.Link g1 c1 ->
+                 case y of wild1 { Link.Link g2 c2 ->
+                 case Link.$fEqGraph_$c== g1 g2 of wild2 {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case GHC.Classes.eqDouble c1 c2 of wild3 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True -> GHC.Types.False } } } }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fEqLink_$c== :: Link.Link -> Link.Link -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <S(SL),1*U(1*U,1*U(U))><S(SL),1*U(1*U,1*U(U))>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.Link) (w1 :: Link.Link) ->
+                 case w of ww { Link.Link ww1 ww2 ->
+                 case w1 of ww3 { Link.Link ww4 ww5 ->
+                 Link.$w$c== ww1 ww2 ww4 ww5 } }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fEqOD :: GHC.Classes.Eq Link.OD
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:. @ Link.OD Link.$fEqOD_$c== Link.$fEqOD_$c/= -}
+00856cf573b6760f545cb5f69dedf509
+  $fEqOD_$c/= :: Link.OD -> Link.OD -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),1*U(U))><S(S(S)L),1*U(1*U(U),1*U(U))>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Link.OD) (y :: Link.OD) ->
+                 case x of wild { Link.:->: a1 a2 ->
+                 case y of wild1 { Link.:->: b1 b2 ->
+                 case GHC.Classes.eqInt a1 b1 of wild2 {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case GHC.Classes.eqInt a2 b2 of wild3 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True -> GHC.Types.False } } } }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fEqOD_$c== :: Link.OD -> Link.OD -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),1*U(U))><S(S(S)L),1*U(1*U(U),1*U(U))>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.OD) (w1 :: Link.OD) ->
+                 case w of ww { Link.:->: ww1 ww2 ->
+                 case ww1 of ww3 { GHC.Types.I# ww4 ->
+                 case w1 of ww5 { Link.:->: ww6 ww7 ->
+                 case ww6 of ww8 { GHC.Types.I# ww9 ->
+                 Link.$w$c==1 ww4 ww2 ww9 ww7 } } } }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fOrdGraph :: GHC.Classes.Ord Link.Graph
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.Graph
+                  Link.$fEqGraph
+                  Link.$fOrdGraph_$ccompare
+                  Link.$fOrdGraph_$c<
+                  Link.$fOrdGraph_$c<=
+                  Link.$fOrdGraph_$c>
+                  Link.$fOrdGraph_$c>=
+                  Link.$fOrdGraph_$cmax
+                  Link.$fOrdGraph_$cmin -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fOrdGraph_$c< :: Link.Graph -> Link.Graph -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Graph) (y :: Link.Graph) ->
+                 case Link.$fOrdGraph_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fOrdGraph_$c<= :: Link.Graph -> Link.Graph -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Graph) (y :: Link.Graph) ->
+                 case Link.$fOrdGraph_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fOrdGraph_$c> :: Link.Graph -> Link.Graph -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Graph) (y :: Link.Graph) ->
+                 case Link.$fOrdGraph_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fOrdGraph_$c>= :: Link.Graph -> Link.Graph -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Graph) (y :: Link.Graph) ->
+                 case Link.$fOrdGraph_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fOrdGraph_$ccompare ::
+    Link.Graph -> Link.Graph -> GHC.Types.Ordering
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: (\ (g1 :: Link.Graph) (g2 :: Link.Graph) ->
+                 case Link.$fEqGraph_$c== g1 g2 of wild {
+                   GHC.Types.False
+                   -> case Link.compose g1 of ww { Link.:->: ww1 ww2 ->
+                      case ww1 of ww3 { GHC.Types.I# ww4 ->
+                      case Link.compose g2 of ww5 { Link.:->: ww6 ww7 ->
+                      case ww6 of ww8 { GHC.Types.I# ww9 ->
+                      case Link.$w$ccompare ww4 ww2 ww9 ww7 of wild1 {
+                        DEFAULT -> GHC.Types.GT GHC.Types.LT -> GHC.Types.LT } } } } }
+                   GHC.Types.True -> GHC.Types.EQ }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fOrdGraph_$cmax :: Link.Graph -> Link.Graph -> Link.Graph
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Graph) (y :: Link.Graph) ->
+                 case Link.$fOrdGraph_$ccompare x y of wild {
+                   DEFAULT -> y GHC.Types.GT -> x }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fOrdGraph_$cmin :: Link.Graph -> Link.Graph -> Link.Graph
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Graph) (y :: Link.Graph) ->
+                 case Link.$fOrdGraph_$ccompare x y of wild {
+                   DEFAULT -> x GHC.Types.GT -> y }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fOrdLink :: GHC.Classes.Ord Link.Link
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.Link
+                  Link.$fEqLink
+                  Link.$fOrdLink_$ccompare
+                  Link.$fOrdLink_$c<
+                  Link.$fOrdLink_$c<=
+                  Link.$fOrdLink_$c>
+                  Link.$fOrdLink_$c>=
+                  Link.$fOrdLink_$cmax
+                  Link.$fOrdLink_$cmin -}
+e5397a8dd2b204020630100edccfb9d2
+  $fOrdLink_$c< :: Link.Link -> Link.Link -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <S(SS(S)),1*U(U,1*U(U))><S(SS(S)),1*U(U,1*U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Link) (y :: Link.Link) ->
+                 case Link.$fOrdLink_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fOrdLink_$c<= :: Link.Link -> Link.Link -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <S(SS(S)),1*U(U,1*U(U))><S(SS(S)),1*U(U,1*U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Link) (y :: Link.Link) ->
+                 case Link.$fOrdLink_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fOrdLink_$c> :: Link.Link -> Link.Link -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <S(SS(S)),1*U(U,1*U(U))><S(SS(S)),1*U(U,1*U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Link) (y :: Link.Link) ->
+                 case Link.$fOrdLink_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fOrdLink_$c>= :: Link.Link -> Link.Link -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <S(SS(S)),1*U(U,1*U(U))><S(SS(S)),1*U(U,1*U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Link) (y :: Link.Link) ->
+                 case Link.$fOrdLink_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fOrdLink_$ccompare :: Link.Link -> Link.Link -> GHC.Types.Ordering
+  {- Arity: 2,
+     Strictness: <S(SS(S)),1*U(U,1*U(U))><S(SS(S)),1*U(U,1*U(U))>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.Link) (w1 :: Link.Link) ->
+                 case w of ww { Link.Link ww1 ww2 ->
+                 case ww2 of ww3 { GHC.Types.D# ww4 ->
+                 case w1 of ww5 { Link.Link ww6 ww7 ->
+                 case ww7 of ww8 { GHC.Types.D# ww9 ->
+                 Link.$w$ccompare1 ww1 ww4 ww6 ww9 } } } }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fOrdLink_$cmax :: Link.Link -> Link.Link -> Link.Link
+  {- Arity: 2,
+     Strictness: <S(SS(S)),1*U(U,U(U))><S(SS(S)),1*U(U,U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Link) (y :: Link.Link) ->
+                 case Link.$fOrdLink_$ccompare x y of wild {
+                   DEFAULT -> y GHC.Types.GT -> x }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fOrdLink_$cmin :: Link.Link -> Link.Link -> Link.Link
+  {- Arity: 2,
+     Strictness: <S(SS(S)),1*U(U,U(U))><S(SS(S)),1*U(U,U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.Link) (y :: Link.Link) ->
+                 case Link.$fOrdLink_$ccompare x y of wild {
+                   DEFAULT -> x GHC.Types.GT -> y }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fOrdOD :: GHC.Classes.Ord Link.OD
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.OD
+                  Link.$fEqOD
+                  Link.$fOrdOD_$ccompare
+                  Link.$fOrdOD_$c<
+                  Link.$fOrdOD_$c<=
+                  Link.$fOrdOD_$c>
+                  Link.$fOrdOD_$c>=
+                  Link.$fOrdOD_$cmax
+                  Link.$fOrdOD_$cmin -}
+00856cf573b6760f545cb5f69dedf509
+  $fOrdOD_$c< :: Link.OD -> Link.OD -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),U(U))><S(S(S)L),1*U(1*U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.OD) (y :: Link.OD) ->
+                 case Link.$fOrdOD_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fOrdOD_$c<= :: Link.OD -> Link.OD -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),U(U))><S(S(S)L),1*U(1*U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.OD) (y :: Link.OD) ->
+                 case Link.$fOrdOD_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fOrdOD_$c> :: Link.OD -> Link.OD -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),U(U))><S(S(S)L),1*U(1*U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.OD) (y :: Link.OD) ->
+                 case Link.$fOrdOD_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fOrdOD_$c>= :: Link.OD -> Link.OD -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),U(U))><S(S(S)L),1*U(1*U(U),U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.OD) (y :: Link.OD) ->
+                 case Link.$fOrdOD_$ccompare x y of wild {
+                   DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fOrdOD_$ccompare :: Link.OD -> Link.OD -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),U(U))><S(S(S)L),1*U(1*U(U),U(U))>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.OD) (w1 :: Link.OD) ->
+                 case w of ww { Link.:->: ww1 ww2 ->
+                 case ww1 of ww3 { GHC.Types.I# ww4 ->
+                 case w1 of ww5 { Link.:->: ww6 ww7 ->
+                 case ww6 of ww8 { GHC.Types.I# ww9 ->
+                 Link.$w$ccompare ww4 ww2 ww9 ww7 } } } }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fOrdOD_$cmax :: Link.OD -> Link.OD -> Link.OD
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(U(U),U(U))><S(S(S)L),1*U(U(U),U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.OD) (y :: Link.OD) ->
+                 case Link.$fOrdOD_$ccompare x y of wild {
+                   DEFAULT -> y GHC.Types.GT -> x }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fOrdOD_$cmin :: Link.OD -> Link.OD -> Link.OD
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(U(U),U(U))><S(S(S)L),1*U(U(U),U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: Link.OD) (y :: Link.OD) ->
+                 case Link.$fOrdOD_$ccompare x y of wild {
+                   DEFAULT -> x GHC.Types.GT -> y }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fSemigroupGraph :: GHC.Base.Semigroup Link.Graph
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.Graph
+                  Link.$fSemigroupGraph_$c<>
+                  Link.$fSemigroupGraph_$csconcat
+                  Link.$fSemigroupGraph_$cstimes -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fSemigroupGraph_$c<> :: Link.Graph -> Link.Graph -> Link.Graph
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>m2, Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.Graph) (w1 :: Link.Graph) ->
+                 case Link.$w$c<> w w1 of ww { Unit# ww1 -> Link.Graph ww1 }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fSemigroupGraph_$csconcat ::
+    GHC.Base.NonEmpty Link.Graph -> Link.Graph
+  {- Arity: 1, Strictness: <S(SS),1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GHC.Base.NonEmpty Link.Graph) ->
+                 case ds of wild { GHC.Base.:| a1 as ->
+                 Link.$fSemigroupGraph_go a1 as }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fSemigroupGraph_$cstimes ::
+    GHC.Real.Integral b => b -> Link.Graph -> Link.Graph
+  {- Arity: 1, Strictness: <L,U> -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fSemigroupGraph_go :: Link.Graph -> [Link.Graph] -> Link.Graph
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+e5397a8dd2b204020630100edccfb9d2
+  $fSemigroupLink :: GHC.Base.Semigroup Link.Link
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.Link
+                  Link.$fSemigroupLink_$c<>
+                  Link.$fSemigroupLink_$csconcat
+                  Link.$fSemigroupLink_$cstimes -}
+e5397a8dd2b204020630100edccfb9d2
+  $fSemigroupLink_$c<> :: Link.Link -> Link.Link -> Link.Link
+  {- Arity: 2, Strictness: <S,1*U(1*U,1*U(U))><S,1*U(1*U,1*U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Link.Link) (ds1 :: Link.Link) ->
+                 case ds of wild { Link.Link g1 c1 ->
+                 case ds1 of wild1 { Link.Link g2 c2 ->
+                 Link.Link
+                   (Link.$fSemigroupGraph_$c<> g1 g2)
+                   (GHC.Float.plusDouble c1 c2) } }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fSemigroupLink_$csconcat ::
+    GHC.Base.NonEmpty Link.Link -> Link.Link
+  {- Arity: 1, Strictness: <S(SS),1*U(1*U(U,U(U)),1*U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GHC.Base.NonEmpty Link.Link) ->
+                 case ds of wild { GHC.Base.:| a1 as ->
+                 Link.$fSemigroupLink_go a1 as }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fSemigroupLink_$cstimes ::
+    GHC.Real.Integral b => b -> Link.Link -> Link.Link
+  {- Arity: 1, Strictness: <L,U> -}
+e5397a8dd2b204020630100edccfb9d2
+  $fSemigroupLink_go :: Link.Link -> [Link.Link] -> Link.Link
+  {- Arity: 2, Strictness: <S,1*U(U,U(U))><S,1*U>m, Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.Link) (w1 :: [Link.Link]) ->
+                 case w of ww { Link.Link ww1 ww2 ->
+                 case Link.$wgo ww1 ww2 w1 of ww3 { (#,#) ww4 ww5 ->
+                 Link.Link ww4 ww5 } }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fSemigroupOD :: GHC.Base.Semigroup Link.OD
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.OD
+                  Link.$fSemigroupOD_$c<>
+                  Link.$fSemigroupOD_$csconcat
+                  Link.$fSemigroupOD_$cstimes -}
+00856cf573b6760f545cb5f69dedf509
+  $fSemigroupOD_$c<> :: Link.OD -> Link.OD -> Link.OD
+  {- Arity: 2,
+     Strictness: <S(LS(S)),1*U(U,1*U(U))><S(S(S)L),1*U(1*U(U),U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Link.OD) (ds1 :: Link.OD) ->
+                 case ds of wild { Link.:->: n1 n2 ->
+                 case ds1 of wild1 { Link.:->: n3 n4 ->
+                 case n2 of wild2 { GHC.Types.I# x ->
+                 case n3 of wild3 { GHC.Types.I# y ->
+                 case GHC.Prim.==# x y of lwild {
+                   DEFAULT -> Link.compose2 1# -> Link.:->: n1 n4 } } } } }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fSemigroupOD_$csconcat :: GHC.Base.NonEmpty Link.OD -> Link.OD
+  {- Arity: 1, Strictness: <S(SS),1*U(1*U(U,U(U)),1*U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GHC.Base.NonEmpty Link.OD) ->
+                 case ds of wild { GHC.Base.:| a1 as ->
+                 Link.$fSemigroupOD_go a1 as }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fSemigroupOD_$cstimes ::
+    GHC.Real.Integral b => b -> Link.OD -> Link.OD
+  {- Arity: 1, Strictness: <L,U> -}
+00856cf573b6760f545cb5f69dedf509
+  $fSemigroupOD_go :: Link.OD -> [Link.OD] -> Link.OD
+  {- Arity: 2, Strictness: <S,1*U(U,U(U))><S,1*U>m, Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.OD) (w1 :: [Link.OD]) ->
+                 case w of ww { Link.:->: ww1 ww2 ->
+                 case Link.$wgo1 ww1 ww2 w1 of ww3 { (#,#) ww4 ww5 ->
+                 Link.:->: ww4 ww5 } }) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fShowGraph :: GHC.Show.Show Link.Graph
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.Graph
+                  Link.$fShowGraph_$cshowsPrec
+                  Link.$fShowGraph_$cshow
+                  Link.$fShowGraph_$cshowList -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fShowGraph1 :: Link.Graph -> GHC.Show.ShowS
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (w :: Link.Graph) -> Link.$w$cshowsPrec 0# w) -}
+4ceb897201af457315ed2b64d3d7328c
+  $fShowGraph2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fShowGraph_$cshow :: Link.Graph -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Link.Graph) ->
+                 Link.$fShowGraph_$cshowsPrec
+                   Link.$fShowGraph2
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fShowGraph_$cshowList :: [Link.Graph] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Link.Graph]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Link.Graph Link.$fShowGraph1 ls s) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $fShowGraph_$cshowsPrec ::
+    GHC.Types.Int -> Link.Graph -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Link.Graph) ->
+                 case w of ww { GHC.Types.I# ww1 -> Link.$w$cshowsPrec ww1 w1 }) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fShowLink :: GHC.Show.Show Link.Link
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.Link
+                  Link.$fShowLink_$cshowsPrec
+                  Link.$fShowLink_$cshow
+                  Link.$fShowLink_$cshowList -}
+e5397a8dd2b204020630100edccfb9d2
+  $fShowLink1 :: Link.Link -> GHC.Show.ShowS
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U(U))>,
+     Unfolding: (\ (w :: Link.Link) ->
+                 case w of ww { Link.Link ww1 ww2 ->
+                 Link.$w$cshowsPrec1 0# ww1 ww2 }) -}
+b56607fa315d4d9b58716db25cacf0c4
+  $fShowLink2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Link "#) -}
+b7fc776c6b586ac32cfcfde9ed201bf8
+  $fShowLink3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fShowLink_$cshow :: Link.Link -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Link.Link) ->
+                 Link.$fShowLink_$cshowsPrec
+                   Link.$fShowGraph2
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fShowLink_$cshowList :: [Link.Link] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Link.Link]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Link.Link Link.$fShowLink1 ls s) -}
+e5397a8dd2b204020630100edccfb9d2
+  $fShowLink_$cshowsPrec ::
+    GHC.Types.Int -> Link.Link -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(1*U,1*U(U))>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Link.Link) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Link.Link ww3 ww4 ->
+                 Link.$w$cshowsPrec1 ww1 ww3 ww4 } }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fShowOD :: GHC.Show.Show Link.OD
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Link.OD
+                  Link.$fShowOD_$cshowsPrec
+                  Link.$fShowOD_$cshow
+                  Link.$fShowOD_$cshowList -}
+00856cf573b6760f545cb5f69dedf509
+  $fShowOD1 :: Link.OD -> GHC.Show.ShowS
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U(1*U(U),1*U(U))><L,U>m2,
+     Unfolding: (\ (w :: Link.OD) (w1 :: GHC.Base.String) ->
+                 case w of ww { Link.:->: ww1 ww2 ->
+                 case Link.$w$cshowsPrec2 0# ww1 ww2 w1 of ww3 { (#,#) ww4 ww5 ->
+                 GHC.Types.: @ GHC.Types.Char ww4 ww5 } }) -}
+bd62b7112352147624c50ff1f643a179
+  $fShowOD2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: (" :->: "#) -}
+00856cf573b6760f545cb5f69dedf509
+  $fShowOD_$cshow :: Link.OD -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),1*U(U))>m2, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Link.OD) ->
+                 case w of ww { Link.:->: ww1 ww2 ->
+                 case ww1 of ww3 { GHC.Types.I# ww4 ->
+                 case Link.$w$cshow ww4 ww2 of ww5 { (#,#) ww6 ww7 ->
+                 GHC.Types.: @ GHC.Types.Char ww6 ww7 } } }) -}
+00856cf573b6760f545cb5f69dedf509
+  $fShowOD_$cshowList :: [Link.OD] -> GHC.Show.ShowS
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Link.OD]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Link.OD Link.$fShowOD1 ls s) -}
+00856cf573b6760f545cb5f69dedf509
+  $fShowOD_$cshowsPrec :: GHC.Types.Int -> Link.OD -> GHC.Show.ShowS
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(S),1*U(U)><S,1*U(1*U(U),1*U(U))><L,U>m2,
+     Inline: [0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Link.OD) (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Link.:->: ww3 ww4 ->
+                 case Link.$w$cshowsPrec2 ww1 ww3 ww4 w2 of ww5 { (#,#) ww6 ww7 ->
+                 GHC.Types.: @ GHC.Types.Char ww6 ww7 } } }) -}
+d5325b193e6f197dbc9d89451f96b0a2
+  $sfromList ::
+    [GHC.Types.Int] -> Data.Set.Internal.Set GHC.Types.Int
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> Data.Set.Internal.Tip @ GHC.Types.Int
+                   : x ds1
+                   -> case ds1 of wild1 {
+                        []
+                        -> case x of dt { GHC.Types.I# ipv ->
+                           Data.Set.Internal.Bin
+                             @ GHC.Types.Int
+                             1#
+                             dt
+                             (Data.Set.Internal.Tip @ GHC.Types.Int)
+                             (Data.Set.Internal.Tip @ GHC.Types.Int) }
+                        : ipv ipv1
+                        -> case x of wild2 { GHC.Types.I# x1 ->
+                           case ipv of wild3 { GHC.Types.I# y ->
+                           case GHC.Prim.>=# x1 y of lwild {
+                             DEFAULT
+                             -> Link.$wgo3
+                                  1#
+                                  (Data.Set.Internal.Bin
+                                     @ GHC.Types.Int
+                                     1#
+                                     wild2
+                                     (Data.Set.Internal.Tip @ GHC.Types.Int)
+                                     (Data.Set.Internal.Tip @ GHC.Types.Int))
+                                  wild1
+                             1#
+                             -> Link.$sfromList_go4
+                                  (Data.Set.Internal.Bin
+                                     @ GHC.Types.Int
+                                     1#
+                                     wild2
+                                     (Data.Set.Internal.Tip @ GHC.Types.Int)
+                                     (Data.Set.Internal.Tip @ GHC.Types.Int))
+                                  wild1 } } } } }) -}
+f160b63b757253cab6b647e1e24111e8
+  $sfromList1 :: [(Link.OD, a)] -> Data.Map.Internal.Map Link.OD a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (ds :: [(Link.OD, a)]) ->
+                 case ds of wild {
+                   [] -> Data.Map.Internal.Tip @ Link.OD @ a
+                   : ds1 ds2
+                   -> case ds1 of wild1 { (,) kx x ->
+                      case ds2 of wild2 {
+                        []
+                        -> case x of x1 { DEFAULT ->
+                           case kx of dt { Link.:->: ipv ipv1 ->
+                           Data.Map.Internal.Bin
+                             @ Link.OD
+                             @ a
+                             1#
+                             dt
+                             x1
+                             (Data.Map.Internal.Tip @ Link.OD @ a)
+                             (Data.Map.Internal.Tip @ Link.OD @ a) } }
+                        : ipv ipv1
+                        -> case ipv of wild3 { (,) ky ds3 ->
+                           case kx of ww { Link.:->: ww1 ww2 ->
+                           case ww1 of ww3 { GHC.Types.I# ww4 ->
+                           case ky of ww5 { Link.:->: ww6 ww7 ->
+                           case ww6 of ww8 { GHC.Types.I# ww9 ->
+                           case Link.$w$ccompare ww4 ww2 ww9 ww7 of wild4 {
+                             DEFAULT
+                             -> case x of x0 { DEFAULT ->
+                                Link.$sfromList2
+                                  @ a
+                                  (Data.Map.Internal.Bin
+                                     @ Link.OD
+                                     @ a
+                                     1#
+                                     ww
+                                     x0
+                                     (Data.Map.Internal.Tip @ Link.OD @ a)
+                                     (Data.Map.Internal.Tip @ Link.OD @ a))
+                                  wild2 }
+                             GHC.Types.LT
+                             -> case x of x0 { DEFAULT ->
+                                Link.$wpoly_go8
+                                  @ a
+                                  1#
+                                  (Data.Map.Internal.Bin
+                                     @ Link.OD
+                                     @ a
+                                     1#
+                                     ww
+                                     x0
+                                     (Data.Map.Internal.Tip @ Link.OD @ a)
+                                     (Data.Map.Internal.Tip @ Link.OD @ a))
+                                  wild2 } } } } } } } } } }) -}
+c12c4faf11f79052552c03547e91e734
+  $sfromList2 ::
+    Data.Map.Internal.Map Link.OD a
+    -> [(Link.OD, a)] -> Data.Map.Internal.Map Link.OD a
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+b50bcd304dc437655364d4032ea58fa9
+  $sfromList_go4 ::
+    Data.Set.Internal.Set GHC.Types.Int
+    -> [GHC.Types.Int] -> Data.Set.Internal.Set GHC.Types.Int
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+4ece8f672a7505b442608411fc008429
+  $sintersection ::
+    Data.Set.Internal.Set Link.Node
+    -> Data.Set.Internal.Set Link.Node
+    -> Data.Set.Internal.Set Link.Node
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [~] -}
+296b39d797f533dedb4d57d9ddfada79
+  $tc':->: :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11796125479852705745##
+                   17085604352107908772##
+                   Link.$trModule
+                   Link.$tc':->:2
+                   0#
+                   Link.$tc':->:1) -}
+8d319c51848f7a6ff7fca9484487237a
+  $tc':->:1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+f6a736936dc3476dc202a3e5f64f5959
+  $tc':->:2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Link.$tc':->:3) -}
+d75f8c859854c6354537d64d99592b1d
+  $tc':->:3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("':->:"#) -}
+6c221ae8a0540cd679f8e2d9b3efe446
+  $tc'Edge :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3691489948149044659##
+                   16676202278185987643##
+                   Link.$trModule
+                   Link.$tc'Edge2
+                   0#
+                   Link.$tc'Edge1) -}
+789c12fd0472931aa7323c71248db9bd
+  $tc'Edge1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+122cb872a93f7287fba361744b5211e9
+  $tc'Edge2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Link.$tc'Edge3) -}
+7e6697448a29d75b4d190034b059e027
+  $tc'Edge3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Edge"#) -}
+89a6e67cd61c864b0df72daee9d0b750
+  $tc'Graph :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16175547071117603604##
+                   5467160231245917684##
+                   Link.$trModule
+                   Link.$tc'Graph2
+                   0#
+                   Link.$tc'Graph1) -}
+d725883847a27932134c138faedca6ac
+  $tc'Graph1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+2c296f1ae77f35a1dd24c604aaf41046
+  $tc'Graph2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Link.$tc'Graph3) -}
+41d97a1e7f8abe1f4582b30ad84447e5
+  $tc'Graph3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Graph"#) -}
+c6d35746f10add398cb1754c0c773205
+  $tc'Link :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6072654549454601517##
+                   15955651714536844640##
+                   Link.$trModule
+                   Link.$tc'Link2
+                   0#
+                   Link.$tc'Link1) -}
+5e5b4252bfcc9db4b991d44e769564b8
+  $tc'Link1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+689db408702de58750b4819f56042abd
+  $tc'Link2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Link.$tc'Link3) -}
+2c69e8af2e3e68556de585563b9fcc1f
+  $tc'Link3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Link"#) -}
+42c76bcab12f37889479e7418361b73a
+  $tcGraph :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6408005546394160008##
+                   9304467419619516066##
+                   Link.$trModule
+                   Link.$tcGraph1
+                   0#
+                   GHC.Types.krep$*) -}
+1a169646cdd4df863cae313f12edf4b2
+  $tcGraph1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Link.$tcGraph2) -}
+2c2c43ebca4373ba9047f7117475b650
+  $tcGraph2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Graph"#) -}
+2bc4aa694dd68a0cca2ffdbc2fbad787
+  $tcLink :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10707198914208281399##
+                   2279212726399094007##
+                   Link.$trModule
+                   Link.$trModule1
+                   0#
+                   GHC.Types.krep$*) -}
+19eb203169ce77599846e5c287e61b07
+  $tcOD :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9800632707812019242##
+                   14654861294043291188##
+                   Link.$trModule
+                   Link.$tcOD1
+                   0#
+                   GHC.Types.krep$*) -}
+4fa4ac52ca08f944c8e80dd274b75ac9
+  $tcOD1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Link.$tcOD2) -}
+96b28276f37c9fac107fea6df8eb3665
+  $tcOD2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("OD"#) -}
+872f97d4592955f97ee7ea09e791df13
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Link.$trModule3 Link.$trModule1) -}
+455eac7303d1d57e1d719deadeb53ea6
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Link.$trModule2) -}
+6a0a39e60c5a9e5699712f4f6496f858
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Link"#) -}
+1e1ceb190bd2443e88e792100a614820
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Link.$trModule4) -}
+b6989f0c47f6e4c3219fef77a1919638
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf"#) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $w$c<> ::
+    Link.Graph -> Link.Graph -> (# Data.Vector.Vector Link.OD #)
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>, Inline: [0] -}
+3cef0c07b6d52a5de67e1573329616ff
+  $w$c== ::
+    Link.Graph
+    -> Link.Cost -> Link.Graph -> Link.Cost -> GHC.Types.Bool
+  {- Arity: 4, Strictness: <S,1*U><L,1*U(U)><S,1*U><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: Link.Graph)
+                   (ww1 :: Link.Cost)
+                   (ww2 :: Link.Graph)
+                   (ww3 :: Link.Cost) ->
+                 case Link.$fEqGraph_$c== ww ww2 of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True -> GHC.Classes.eqDouble ww1 ww3 }) -}
+28751861cfb8c4851eaced1f87f18b30
+  $w$c==1 ::
+    GHC.Prim.Int#
+    -> Link.Node -> GHC.Prim.Int# -> Link.Node -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,U><L,1*U(U)><S,U><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Link.Node)
+                   (ww2 :: GHC.Prim.Int#)
+                   (ww3 :: Link.Node) ->
+                 case GHC.Prim.==# ww ww2 of lwild {
+                   DEFAULT -> GHC.Types.False 1# -> GHC.Classes.eqInt ww1 ww3 }) -}
+22d3d8ebaae590949c64a0ff55bd2e66
+  $w$ccompare ::
+    GHC.Prim.Int#
+    -> Link.Node -> GHC.Prim.Int# -> Link.Node -> GHC.Types.Ordering
+  {- Arity: 4, HasNoCafRefs, Strictness: <S,U><L,U(U)><S,U><L,U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Link.Node)
+                   (ww2 :: GHC.Prim.Int#)
+                   (ww3 :: Link.Node) ->
+                 let {
+                   $j :: GHC.Types.Ordering <join 0>
+                   = case GHC.Prim.<# ww ww2 of lwild {
+                       DEFAULT
+                       -> case GHC.Prim.==# ww ww2 of lwild1 {
+                            DEFAULT -> GHC.Types.GT
+                            1#
+                            -> case ww1 of wild { GHC.Types.I# x ->
+                               case ww3 of wild1 { GHC.Types.I# y ->
+                               case GHC.Prim.<# x y of lwild2 {
+                                 DEFAULT -> GHC.Types.GT 1# -> GHC.Types.LT } } } }
+                       1# -> GHC.Types.LT }
+                 } in
+                 case GHC.Prim.==# ww ww2 of lwild {
+                   DEFAULT -> $j
+                   1#
+                   -> case ww1 of wild { GHC.Types.I# x ->
+                      case ww3 of wild1 { GHC.Types.I# y ->
+                      case GHC.Prim.==# x y of lwild1 {
+                        DEFAULT -> $j 1# -> GHC.Types.EQ } } } }) -}
+6a3959bf8440a101a5eacff1168867ae
+  $w$ccompare1 ::
+    Link.Graph
+    -> GHC.Prim.Double#
+    -> Link.Graph
+    -> GHC.Prim.Double#
+    -> GHC.Types.Ordering
+  {- Arity: 4, Strictness: <S,U><S,U><S,U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Link.Graph)
+                   (ww1 :: GHC.Prim.Double#)
+                   (ww2 :: Link.Graph)
+                   (ww3 :: GHC.Prim.Double#) ->
+                 let {
+                   $j :: GHC.Types.Ordering <join 0>
+                   = case GHC.Prim.==## ww1 ww3 of lwild {
+                       DEFAULT
+                       -> case GHC.Prim.<## ww1 ww3 of lwild1 {
+                            DEFAULT -> GHC.Types.GT 1# -> GHC.Types.LT }
+                       1#
+                       -> case Link.$fOrdGraph_$ccompare ww ww2 of wild {
+                            DEFAULT -> GHC.Types.GT GHC.Types.LT -> GHC.Types.LT } }
+                 } in
+                 case Link.$fEqGraph_$c== ww ww2 of wild {
+                   GHC.Types.False -> $j
+                   GHC.Types.True
+                   -> case GHC.Prim.==## ww1 ww3 of lwild {
+                        DEFAULT -> $j 1# -> GHC.Types.EQ } }) -}
+603e1b472f11294057c1475fb2ca7546
+  $w$cshow ::
+    GHC.Prim.Int#
+    -> Link.Node -> (# GHC.Types.Char, [GHC.Types.Char] #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) (ww1 :: Link.Node) ->
+                 GHC.Show.$wshowSignedInt
+                   6#
+                   ww
+                   (GHC.CString.unpackAppendCString#
+                      Link.$fShowOD2
+                      (case ww1 of ww2 { GHC.Types.I# ww3 ->
+                       case GHC.Show.$wshowSignedInt
+                              6#
+                              ww3
+                              (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                       GHC.Types.: @ GHC.Types.Char ww5 ww6 } }))) -}
+a81454e5043b1dcccfa563465ff4ffef
+  $w$cshowsPrec :: GHC.Prim.Int# -> Link.Graph -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
+c738698936620285e96b3b3a18fdf979
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int# -> Link.Graph -> Link.Cost -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,U><L,1*U><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Link.Graph)
+                   (ww2 :: Link.Cost) ->
+                 let {
+                   f2 :: GHC.Base.String -> GHC.Base.String
+                   = Link.$w$cshowsPrec 11# ww1
+                 } in
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = case ww2 of ww3 { GHC.Types.D# ww4 ->
+                     GHC.Float.$w$sshowSignedFloat
+                       GHC.Float.$fShowDouble2
+                       Link.$fShowLink3
+                       ww4 }
+                 } in
+                 case GHC.Prim.>=# ww 11# of lwild {
+                   DEFAULT
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.CString.unpackAppendCString#
+                        Link.$fShowLink2
+                        (f2 (GHC.Types.: @ GHC.Types.Char GHC.Show.showSpace1 (g x)))
+                   1#
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (GHC.CString.unpackAppendCString#
+                           Link.$fShowLink2
+                           (f2
+                              (GHC.Types.:
+                                 @ GHC.Types.Char
+                                 GHC.Show.showSpace1
+                                 (g (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 x))))) }) -}
+e39a6502e253ee5669efa7fb93a7db2e
+  $w$cshowsPrec2 ::
+    GHC.Prim.Int#
+    -> Link.Node
+    -> Link.Node
+    -> GHC.Base.String
+    -> (# GHC.Types.Char, [GHC.Types.Char] #)
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Link.Node)
+                   (ww2 :: Link.Node)
+                   (w :: GHC.Base.String) ->
+                 case GHC.Prim.>=# ww 6# of lwild {
+                   DEFAULT
+                   -> case ww1 of ww3 { GHC.Types.I# ww4 ->
+                      GHC.Show.$wshowSignedInt
+                        6#
+                        ww4
+                        (GHC.CString.unpackAppendCString#
+                           Link.$fShowOD2
+                           (case ww2 of ww5 { GHC.Types.I# ww6 ->
+                            case GHC.Show.$wshowSignedInt 6# ww6 w of ww7 { (#,#) ww8 ww9 ->
+                            GHC.Types.: @ GHC.Types.Char ww8 ww9 } })) }
+                   1#
+                   -> (# GHC.Show.$fShow(,)4,
+                         case ww1 of ww3 { GHC.Types.I# ww4 ->
+                         case GHC.Show.$wshowSignedInt
+                                6#
+                                ww4
+                                (GHC.CString.unpackAppendCString#
+                                   Link.$fShowOD2
+                                   (case ww2 of ww5 { GHC.Types.I# ww6 ->
+                                    case GHC.Show.$wshowSignedInt
+                                           6#
+                                           ww6
+                                           (GHC.Types.:
+                                              @ GHC.Types.Char
+                                              GHC.Show.$fShow(,)2
+                                              w) of ww7 { (#,#) ww8 ww9 ->
+                                    GHC.Types.:
+                                      @ GHC.Types.Char
+                                      ww8
+                                      ww9 } })) of ww5 { (#,#) ww6 ww7 ->
+                         GHC.Types.: @ GHC.Types.Char ww6 ww7 } } #) }) -}
+3c6420aa85aeade73dc84a4f19766f40
+  $w$sgo1 ::
+    (a1 -> a1 -> a1)
+    -> Link.Node
+    -> Link.Node
+    -> a1
+    -> Data.Map.Internal.Map Link.OD a1
+    -> Data.Map.Internal.Map Link.OD a1
+  {- Arity: 5,
+     Strictness: <L,1*C1(C1(U))><L,U(U)><L,U(U)><L,U><S,1*U>,
+     Inline: [0] -}
+4b48d337f357fd7e1b671008ccc023b0
+  $w$sgo13 ::
+    Link.Node
+    -> Link.Node
+    -> Data.Map.Internal.Map Link.OD a1
+    -> Data.Map.Internal.Map Link.OD a1
+  {- Arity: 3, Strictness: <L,1*U(U)><L,U(U)><S,1*U>, Inline: [0] -}
+b8625590c5c77227cc8fe72c82c460ce
+  $w$sgo3 ::
+    Link.Node
+    -> GHC.Prim.Int#
+    -> Data.Set.Internal.Set Link.Node
+    -> Data.Set.Internal.Set Link.Node
+  {- Arity: 3, Strictness: <L,U><L,U><S,1*U>, Inline: [0] -}
+a737aaf78063aa4d154e5f782eb79dbb
+  $w$sgo8 ::
+    Link.Node
+    -> Link.Node
+    -> a1
+    -> Data.Map.Internal.Map Link.OD a1
+    -> Data.Map.Internal.Map Link.OD a1
+  {- Arity: 4, Strictness: <L,U(U)><L,U(U)><S,1*U><S,1*U>,
+     Inline: [0] -}
+e5397a8dd2b204020630100edccfb9d2
+  $wgo ::
+    Link.Graph
+    -> Link.Cost -> [Link.Link] -> (# Link.Graph, Link.Cost #)
+  {- Arity: 3, Strictness: <L,U><L,U(U)><S,1*U>, Inline: [0] -}
+00856cf573b6760f545cb5f69dedf509
+  $wgo1 ::
+    Link.Node -> Link.Node -> [Link.OD] -> (# Link.Node, Link.Node #)
+  {- Arity: 3, Strictness: <L,U><L,U(U)><S,1*U>, Inline: [0] -}
+06302984423d5a392c047bfb1bf2428c
+  $wgo3 ::
+    GHC.Prim.Int#
+    -> Data.Set.Internal.Set GHC.Types.Int
+    -> [GHC.Types.Int]
+    -> Data.Set.Internal.Set GHC.Types.Int
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+7dcecc1c6e7935ca05a4ab411cb7d225
+  $winsertLink ::
+    Link.Graph -> Link.Cost -> Link.Network -> Link.Network
+  {- Arity: 3, Strictness: <S,U><L,U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Link.Graph)
+                   (ww1 :: Link.Cost)
+                   (w :: Link.Network) ->
+                 case Link.compose ww of ww2 { Link.:->: ww3 ww4 ->
+                 case Link.$wpoly_go1 @ Link.Link ww3 ww4 w of wild {
+                   GHC.Base.Nothing
+                   -> Link.$w$sgo8 @ Link.Link ww3 ww4 (Link.Link ww ww1) w
+                   GHC.Base.Just ds -> w } }) -}
+574a86e9fe3e0d016cd0c22336cee81a
+  $wisNextOD ::
+    Link.Node
+    -> GHC.Prim.Int# -> GHC.Prim.Int# -> Link.Node -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,1*U(U)><S,U><S,U><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: Link.Node)
+                   (ww1 :: GHC.Prim.Int#)
+                   (ww2 :: GHC.Prim.Int#)
+                   (ww3 :: Link.Node) ->
+                 case GHC.Prim.==# ww1 ww2 of lwild {
+                   DEFAULT -> GHC.Types.False 1# -> GHC.Classes.neInt ww ww3 }) -}
+fc5d72beb525c4c52b2c018bcce85533
+  $wpoly_go1 ::
+    Link.Node
+    -> Link.Node -> Data.Map.Internal.Map Link.OD a -> GHC.Base.Maybe a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,1*U(U)><L,U(U)><S,1*U>,
+     Inline: [0] -}
+2a26ae3255fa6e15ceffedf30d53e804
+  $wpoly_go13 ::
+    Link.Graph
+    -> Link.Cost
+    -> Data.Map.Internal.Map k Link.Link
+    -> (# Link.Graph, Link.Cost #)
+  {- Arity: 3, Strictness: <L,U><L,U(U)><S,1*U>, Inline: [0] -}
+d4e4cd6d32fea38d37ec65782af4bfc8
+  $wpoly_go8 ::
+    GHC.Prim.Int#
+    -> Data.Map.Internal.Map Link.OD a
+    -> [(Link.OD, a)]
+    -> Data.Map.Internal.Map Link.OD a
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+1ae9ca24ada244e77994a2c2d45ccfa8
+  type Cost = GHC.Types.Double
+a81454e5043b1dcccfa563465ff4ffef
+  data Graph = Edge Link.OD | Graph (Data.Vector.Vector Link.OD)
+e5397a8dd2b204020630100edccfb9d2
+  data Link = Link Link.Graph Link.Cost
+65194796d463e797e41768c04351e9f1
+  type Network = Data.Map.Internal.Map Link.OD Link.Link
+2efbb1a25108c6ecfb7204ecf0f77c11
+  type Node = GHC.Types.Int
+00856cf573b6760f545cb5f69dedf509
+  data OD = Link.Node :->: Link.Node
+3fe76a53b0a49af0aa5dd0ccb60b4247
+  type Path = Link.Network
+a81454e5043b1dcccfa563465ff4ffef
+  compose :: Link.Graph -> Link.OD
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: Link.Graph) ->
+                 case ds of wild {
+                   Link.Edge od -> od
+                   Link.Graph v
+                   -> case v of v2 { Data.Vector.Vector ipv ipv1 ipv2 ->
+                      case GHC.Prim.>=# 0# ipv1 of lwild {
+                        DEFAULT
+                        -> case GHC.Prim.indexArray#
+                                  @ Link.OD
+                                  ipv2
+                                  ipv of ds3 { Unit# ipv3 ->
+                           case ipv3 of ww { Link.:->: ww1 ww2 ->
+                           letrec {
+                             $wfoldr1M_loop1 :: GHC.Types.SPEC
+                                                -> Link.Node
+                                                -> Link.Node
+                                                -> GHC.Prim.Int#
+                                                -> (# Link.Node, Link.Node #)
+                               {- Arity: 4, Strictness: <S,1*U><L,U><L,U(U)><S,U>, Inline: [0] -}
+                             = \ (w :: GHC.Types.SPEC)
+                                 (ww3 :: Link.Node)
+                                 (ww4 :: Link.Node)
+                                 (ww5 :: GHC.Prim.Int#) ->
+                               case w of ds5 { DEFAULT ->
+                               case GHC.Prim.>=# ww5 ipv1 of lwild1 {
+                                 DEFAULT
+                                 -> case GHC.Prim.indexArray#
+                                           @ Link.OD
+                                           ipv2
+                                           (GHC.Prim.+# ipv ww5) of ds1 { Unit# ipv4 ->
+                                    case ipv4 of ww6 { Link.:->: ww7 ww8 ->
+                                    case $wfoldr1M_loop1
+                                           GHC.Types.SPEC
+                                           ww7
+                                           ww8
+                                           (GHC.Prim.+# ww5 1#) of ww9 { (#,#) ww10 ww11 ->
+                                    case ww4 of wild1 { GHC.Types.I# x ->
+                                    case ww10 of wild2 { GHC.Types.I# y ->
+                                    case GHC.Prim.==# x y of lwild2 {
+                                      DEFAULT
+                                      -> case Link.compose2 ret_ty (# Link.Node, Link.Node #) of {}
+                                      1# -> (# ww3, ww11 #) } } } } } }
+                                 1# -> (# ww3, ww4 #) } }
+                           } in
+                           case $wfoldr1M_loop1
+                                  GHC.Types.SPEC
+                                  ww1
+                                  ww2
+                                  1# of ww3 { (#,#) ww4 ww5 ->
+                           Link.:->: ww4 ww5 } } }
+                        1#
+                        -> Link.compose1
+                             `cast`
+                           (Data.Vector.Fusion.Util.N:Id[0] <Link.OD>_R) } } }) -}
+34b25cb16204c33ba0070aa3c83cc8d4
+  compose1 :: Data.Vector.Fusion.Util.Id Link.OD
+  {- Strictness: x -}
+00856cf573b6760f545cb5f69dedf509
+  compose2 :: Link.OD
+  {- Strictness: x -}
+7f0058c720c99e1bf5af80fa1b00cb30
+  composeLink :: Link.Link -> Link.OD
+  {- Arity: 1, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Link.Link) ->
+                 case ds of wild { Link.Link g ds1 -> Link.compose g }) -}
+3e64e13a6e0fdb3592f607fccb44a82b
+  insertLink :: Link.Link -> Link.Network -> Link.Network
+  {- Arity: 2, Strictness: <S(SL),1*U(U,U)><S,U>, Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.Link) (w1 :: Link.Network) ->
+                 case w of ww { Link.Link ww1 ww2 ->
+                 Link.$winsertLink ww1 ww2 w1 }) -}
+a5a51f5ab882b1638e41b296b0244f19
+  inverseNetwork :: Link.Network -> Link.Network
+  {- Arity: 1,
+     Unfolding: (Link.inverseNetwork_go13
+                   (Data.Map.Internal.Tip @ Link.OD @ Link.Link)) -}
+7125259b1a0643bf9703c47209d3d3c8
+  inverseNetwork_go13 ::
+    Data.Map.Internal.Map Link.OD Link.Link
+    -> Data.Map.Internal.Map Link.OD Link.Link
+    -> Data.Map.Internal.Map Link.OD Link.Link
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+6b25b1f09926eafb9a4fc6c948086cc1
+  invertOD :: Link.OD -> Link.OD
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Link.OD) ->
+                 case ds of wild { Link.:->: n1 n2 -> Link.:->: n2 n1 }) -}
+5b06be03caebb2d0995a0a7230fb16cb
+  isNextGraph :: Link.Graph -> Link.Graph -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+d7769b935ab0ecbf6ea22f0385211b8f
+  isNextLink :: Link.Link -> Link.Link -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S(SL),1*U(1*U,A)><S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Link.Link) (ds1 :: Link.Link) ->
+                 case ds of wild { Link.Link g1 ds2 ->
+                 case ds1 of wild1 { Link.Link g2 ds3 ->
+                 Link.isNextGraph g1 g2 } }) -}
+7e1b10586736eacc3324f0c8846d9764
+  isNextOD :: Link.OD -> Link.OD -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(LS(S)),1*U(1*U(U),1*U(U))><S(S(S)L),1*U(1*U(U),1*U(U))>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.OD) (w1 :: Link.OD) ->
+                 case w of ww { Link.:->: ww1 ww2 ->
+                 case ww2 of ww3 { GHC.Types.I# ww4 ->
+                 case w1 of ww5 { Link.:->: ww6 ww7 ->
+                 case ww6 of ww8 { GHC.Types.I# ww9 ->
+                 Link.$wisNextOD ww1 ww4 ww9 ww7 } } } }) -}
+6442b8501ded33099d483c56aa835eed
+  networkFromList :: [(Link.OD, Link.Cost)] -> Link.Network
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (odcs :: [(Link.OD, Link.Cost)]) ->
+                 Link.$sfromList1
+                   @ Link.Link
+                   (GHC.Base.build
+                      @ (Link.OD, Link.Link)
+                      (\ @ b1
+                         (c :: (Link.OD, Link.Link) -> b1 -> b1)[OneShot]
+                         (n :: b1)[OneShot] ->
+                       GHC.Base.foldr
+                         @ (Link.OD, Link.Cost)
+                         @ b1
+                         (GHC.Base.mapFB
+                            @ (Link.OD, Link.Link)
+                            @ b1
+                            @ (Link.OD, Link.Cost)
+                            c
+                            Link.networkFromList1)
+                         n
+                         odcs))) -}
+2898ab8e3b81c8f3d88eadd4270b79b3
+  networkFromList1 :: (Link.OD, Link.Cost) -> (Link.OD, Link.Link)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: (Link.OD, Link.Cost)) ->
+                 case ds of wild { (,) od c ->
+                 (od, Link.Link (Link.Edge od) c) }) -}
+52d45af56d1579b00491bf608a5dafb0
+  nodeSet :: Link.Graph -> Data.Set.Internal.Set Link.Node
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: Link.Graph) ->
+                 case ds of wild {
+                   Link.Edge ds1
+                   -> case ds1 of wild1 { Link.:->: n1 n2 ->
+                      Link.$sfromList
+                        (GHC.Types.:
+                           @ (GHC.Exts.Item [Link.Node])
+                           n1 `cast` (Sub (Sym (GHC.Exts.D:R:Item[][0] <GHC.Types.Int>_N)))
+                           (GHC.Types.:
+                              @ (GHC.Exts.Item [Link.Node])
+                              n2 `cast` (Sub (Sym (GHC.Exts.D:R:Item[][0] <GHC.Types.Int>_N)))
+                              (GHC.Types.[] @ (GHC.Exts.Item [Link.Node]))))
+                          `cast`
+                        ([Sub (GHC.Exts.D:R:Item[][0] <GHC.Types.Int>_N)])_R }
+                   Link.Graph v
+                   -> case v of v2 { Data.Vector.Vector ipv ipv1 ipv2 ->
+                      case GHC.Prim.<# 0# ipv1 of lwild {
+                        DEFAULT
+                        -> case Link.nodeSet1 ipv1
+                           ret_ty (Data.Set.Internal.Set Link.Node)
+                           of {}
+                        1#
+                        -> case GHC.Prim.indexArray#
+                                  @ Link.OD
+                                  ipv2
+                                  ipv of ds3 { Unit# ipv3 ->
+                           case ipv3 of wild1 { Link.:->: n1 ds1 ->
+                           let {
+                             z :: Data.Set.Internal.Set Link.Node
+                             = Link.$sfromList
+                                 (GHC.Types.:
+                                    @ (GHC.Exts.Item (Data.Set.Internal.Set Link.Node))
+                                    n1
+                                      `cast`
+                                    (Sub (Sym (Data.Set.Internal.D:R:ItemSet[0] <GHC.Types.Int>_N)))
+                                    (GHC.Types.[]
+                                       @ (GHC.Exts.Item (Data.Set.Internal.Set Link.Node))))
+                                   `cast`
+                                 ([Sub (Data.Set.Internal.D:R:ItemSet[0] <GHC.Types.Int>_N)])_R
+                           } in
+                           letrec {
+                             $wfoldrM_loop :: GHC.Types.SPEC
+                                              -> GHC.Prim.Int#
+                                              -> Data.Vector.Fusion.Util.Id
+                                                   (Data.Set.Internal.Set Link.Node)
+                               {- Arity: 2, Strictness: <S,1*U><S,U>, Inline: [0] -}
+                             = \ (w :: GHC.Types.SPEC) (ww :: GHC.Prim.Int#) ->
+                               case w of ds5 { DEFAULT ->
+                               case GHC.Prim.>=# ww ipv1 of lwild1 {
+                                 DEFAULT
+                                 -> case GHC.Prim.indexArray#
+                                           @ Link.OD
+                                           ipv2
+                                           (GHC.Prim.+# ipv ww) of ds2 { Unit# ipv4 ->
+                                    case ipv4 of wild2 { Link.:->: ds4 n2 ->
+                                    case n2 of ww1 { GHC.Types.I# ww2 ->
+                                    (Link.$w$sgo3
+                                       ww1
+                                       ww2
+                                       ($wfoldrM_loop GHC.Types.SPEC (GHC.Prim.+# ww 1#))
+                                         `cast`
+                                       (Data.Vector.Fusion.Util.N:Id[0]
+                                            <Data.Set.Internal.Set Link.Node>_R))
+                                      `cast`
+                                    (Sym (Data.Vector.Fusion.Util.N:Id[0]
+                                              <Data.Set.Internal.Set Link.Node>_R)) } } }
+                                 1#
+                                 -> z `cast`
+                                    (Sym (Data.Vector.Fusion.Util.N:Id[0]
+                                              <Data.Set.Internal.Set Link.Node>_R)) } }
+                           } in
+                           ($wfoldrM_loop GHC.Types.SPEC 0#)
+                             `cast`
+                           (Data.Vector.Fusion.Util.N:Id[0]
+                                <Data.Set.Internal.Set Link.Node>_R) } } } } }) -}
+3070c6f12984d6ad430c17b2870594fe
+  nodeSet1 :: GHC.Prim.Int# -> Link.OD
+  {- Arity: 1, Strictness: <B,U>x -}
+43e4f61570793fd11d0eb0340dfb6411
+  shortestPath :: Link.Network -> Link.Path
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (n_ :: Link.Network) ->
+                 Link.shortestPath_go
+                   n_
+                   (Data.Map.Internal.Tip @ Link.OD @ Link.Link)) -}
+d4683f147c34f121fe111f6b31e06d6f
+  shortestPath_go :: Link.Network -> Link.Path -> Link.Path
+  {- Arity: 2, Strictness: <S,1*U><S,U> -}
+instance GHC.Classes.Eq [Link.Graph] = Link.$fEqGraph
+instance GHC.Classes.Eq [Link.Link] = Link.$fEqLink
+instance GHC.Classes.Eq [Link.OD] = Link.$fEqOD
+instance GHC.Classes.Ord [Link.Graph] = Link.$fOrdGraph
+instance GHC.Classes.Ord [Link.Link] = Link.$fOrdLink
+instance GHC.Classes.Ord [Link.OD] = Link.$fOrdOD
+instance GHC.Base.Semigroup [Link.Graph] = Link.$fSemigroupGraph
+instance GHC.Base.Semigroup [Link.Link] = Link.$fSemigroupLink
+instance GHC.Base.Semigroup [Link.OD] = Link.$fSemigroupOD
+instance GHC.Show.Show [Link.Graph] = Link.$fShowGraph
+instance GHC.Show.Show [Link.Link] = Link.$fShowLink
+instance GHC.Show.Show [Link.OD] = Link.$fShowOD
+"SPEC/Link fromList @ Int" [orphan] forall ($dOrd :: GHC.Classes.Ord
+                                                       GHC.Types.Int)
+  Data.Set.Internal.fromList @ GHC.Types.Int $dOrd = Link.$sfromList
+"SPEC/Link fromList @ OD _" forall @ a
+                                   ($dOrd :: GHC.Classes.Ord Link.OD)
+  Data.Map.Strict.Internal.fromList @ Link.OD @ a $dOrd
+  = Link.$sfromList1 @ a
+"SPEC/Link intersection @ Node" [orphan] forall ($dOrd :: GHC.Classes.Ord
+                                                            Link.Node)
+  Data.Set.Internal.intersection @ GHC.Types.Int $dOrd
+  = Link.$sintersection
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

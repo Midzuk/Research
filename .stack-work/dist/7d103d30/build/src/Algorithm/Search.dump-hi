@@ -1,0 +1,167 @@
+
+==================== FINAL INTERFACE ====================
+2018-09-16 04:28:29.859281 UTC
+
+interface research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf:Algorithm.Search 8043
+  interface hash: 6c7ece64a66fdc4a56da8dd2ad5d2e88
+  ABI hash: 32e402e997ae1d1ea2fff537ab8c9376
+  export-list hash: 25f2569e2c7bb0040bdcd8d74f40f40f
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 85e2f290645bf288cfa08e3b504c514d
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Algorithm.Search.searchMin
+module dependencies:
+package dependencies: base-4.11.1.0* ghc-prim-0.5.2.0
+                      integer-gmp-1.0.2.0
+orphans: base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity base-4.11.1.0:Data.Monoid
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:GHC.Generics
+                         base-4.11.1.0:GHC.IO.Exception
+import  -/  base-4.11.1.0:GHC.Base b7dd14d8fe8d606dde5678ea6b0575e9
+import  -/  base-4.11.1.0:GHC.Float 99ddb84df6cc12bd84829dd8cd755ac2
+import  -/  base-4.11.1.0:GHC.Num 5de8df0185e7e8d8ec29b3c61e2c8606
+import  -/  base-4.11.1.0:GHC.Real 032ed0a1053f878238d78e95e75f2edf
+import  -/  base-4.11.1.0:Prelude aca391812f777207b15d62bb5b9feb63
+import  -/  ghc-prim-0.5.2.0:GHC.Classes f7d67fd97d5a20e9252c9597d1aa387b
+b3e60832d5c0ca220011caae0c9d4593
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Algorithm.Search.$trModule3
+                   Algorithm.Search.$trModule1) -}
+0d81e9fb5ab80f58c7de785096040e1f
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Algorithm.Search.$trModule2) -}
+fc9f33a47b0c7c785c892323272a93e4
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Algorithm.Search"#) -}
+469ce620bd0532d00199ee814e7026e8
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Algorithm.Search.$trModule4) -}
+968f346c2b77b55ad272117c8e3d23a1
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf"#) -}
+03ca5c331e9f447f96b64658b630b753
+  $wsearchMin ::
+    GHC.Prim.Double#
+    -> (Algorithm.Search.X -> Algorithm.Search.Y)
+    -> GHC.Prim.Double#
+    -> GHC.Prim.Double#
+    -> GHC.Prim.Double#
+  {- Arity: 4, Strictness: <S,U><L,C(U(U))><S,U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Double#)
+                   (w :: Algorithm.Search.X -> Algorithm.Search.Y)
+                   (ww1 :: GHC.Prim.Double#)
+                   (ww2 :: GHC.Prim.Double#) ->
+                 case Algorithm.Search.phi of wild { GHC.Types.D# x ->
+                 case GHC.Prim./##
+                        (GHC.Prim.+## ww1 (GHC.Prim.*## x ww2))
+                        (GHC.Prim.+## x 1.0##) of wild2 { DEFAULT ->
+                 letrec {
+                   $wgo :: GHC.Types.Bool
+                           -> GHC.Prim.Double#
+                           -> Algorithm.Search.Y
+                           -> (Algorithm.Search.X -> Algorithm.Search.Y)
+                           -> GHC.Prim.Double#
+                           -> GHC.Prim.Double#
+                           -> GHC.Prim.Double#
+                     <join 6> {- Arity: 6,
+                                 Strictness: <L,1*U><S,U><L,1*U(U)><L,C(U(U))><S,U><S,U>,
+                                 Inline: [0] -}
+                   = \ (w1 :: GHC.Types.Bool)
+                       (ww3 :: GHC.Prim.Double#)
+                       (w2 :: Algorithm.Search.Y)
+                       (w3 :: Algorithm.Search.X -> Algorithm.Search.Y)
+                       (ww4 :: GHC.Prim.Double#)
+                       (ww5 :: GHC.Prim.Double#) ->
+                     case GHC.Prim.<##
+                            (GHC.Prim.fabsDouble# (GHC.Prim.-## ww5 ww4))
+                            ww of lwild {
+                       DEFAULT
+                       -> case w1 of wild1 {
+                            GHC.Types.False
+                            -> case GHC.Prim./##
+                                      (GHC.Prim.+## (GHC.Prim.*## x ww4) ww5)
+                                      (GHC.Prim.+## 1.0## x) of wild3 { DEFAULT ->
+                               case w3 (GHC.Types.D# wild3) of wild4 { GHC.Types.D# x1 ->
+                               case w2 of wild5 { GHC.Types.D# y ->
+                               case GHC.Prim.<## x1 y of lwild1 {
+                                 DEFAULT -> $wgo GHC.Types.True ww3 wild5 w3 wild3 ww5
+                                 1# -> $wgo GHC.Types.False wild3 wild4 w3 ww4 ww3 } } } }
+                            GHC.Types.True
+                            -> case GHC.Prim./##
+                                      (GHC.Prim.+## ww4 (GHC.Prim.*## x ww5))
+                                      (GHC.Prim.+## x 1.0##) of wild3 { DEFAULT ->
+                               case w3 (GHC.Types.D# wild3) of wild4 { GHC.Types.D# x1 ->
+                               case w2 of wild5 { GHC.Types.D# y ->
+                               case GHC.Prim.<## x1 y of lwild1 {
+                                 DEFAULT -> $wgo GHC.Types.False ww3 wild5 w3 ww4 wild3
+                                 1# -> $wgo GHC.Types.True wild3 wild4 w3 ww3 ww5 } } } } }
+                       1# -> ww3 }
+                 } in
+                 $wgo
+                   GHC.Types.False
+                   wild2
+                   (w (GHC.Types.D# wild2))
+                   w
+                   ww1
+                   ww2 } }) -}
+b3c1569fd73a8457dfd041b8c1642d10
+  type Range = (Algorithm.Search.X, Algorithm.Search.X)
+f3fb44993de1ec111bccc4d70e8f472e
+  type Tolerance = GHC.Types.Double
+f0ff93bfb3dc3930a8021050f5e74dc8
+  type X = GHC.Types.Double
+0b685cae9f6c0e358188a70187c3807e
+  type Y = GHC.Types.Double
+3483d40a0af1990d798bf643d378fe4e
+  phi :: GHC.Types.Double
+  {- Strictness: m,
+     Unfolding: (let {
+                   wild2 :: GHC.Prim.Double#
+                   = GHC.Prim./##
+                       (GHC.Prim.+## 1.0## (GHC.Prim.sqrtDouble# 5.0##))
+                       2.0##
+                 } in
+                 GHC.Types.D# wild2) -}
+9e8320205788984e72c1bf2471da90be
+  searchMin ::
+    Algorithm.Search.Tolerance
+    -> (Algorithm.Search.X -> Algorithm.Search.Y)
+    -> Algorithm.Search.Range
+    -> Algorithm.Search.X
+  {- Arity: 3,
+     Strictness: <S(S),1*U(U)><L,C(U(U))><S(S(S)S(S)),1*U(1*U(U),1*U(U))>m,
+     Inline: [0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: Algorithm.Search.Tolerance)
+                   (w1 :: Algorithm.Search.X -> Algorithm.Search.Y)
+                   (w2 :: Algorithm.Search.Range) ->
+                 case w of ww { GHC.Types.D# ww1 ->
+                 case w2 of ww2 { (,) ww3 ww4 ->
+                 case ww3 of ww5 { GHC.Types.D# ww6 ->
+                 case ww4 of ww7 { GHC.Types.D# ww8 ->
+                 case Algorithm.Search.$wsearchMin
+                        ww1
+                        w1
+                        ww6
+                        ww8 of ww9 { DEFAULT ->
+                 GHC.Types.D# ww9 } } } } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

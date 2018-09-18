@@ -1,0 +1,568 @@
+
+==================== FINAL INTERFACE ====================
+2018-09-16 00:33:51.0353153 UTC
+
+interface research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf:Csv2 8043
+  interface hash: 6984133d61f02294ef584e1e1cae41dc
+  ABI hash: 61ff676d851328558f0c93a91639eb40
+  export-list hash: 7e9f173dc65108abce9b2870774f023a
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 0ccc1c6121a99a7d5d6f3a567cd15571
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Csv2.g
+  Csv2.Bridge
+  Csv2.Dest
+  Csv2.Dist
+  Csv2.Highway
+  Csv2.LinkOutCsv{Csv2.LinkOutCsv}
+  Csv2.Oneway
+  Csv2.Org
+  Csv2.TripCsv{Csv2.TripCsv}
+  Csv2.Width
+module dependencies: Dijkstra FrankWolfe Search
+package dependencies: Only-0.1 Win32-2.6.1.0 array-0.5.2.0
+                      attoparsec-0.13.2.2 base-4.11.1.0 binary-0.8.5.1
+                      bytestring-0.10.8.2 cassava-0.5.1.0 containers-0.5.11.0
+                      deepseq-1.4.3.0 directory-1.3.1.5 filepath-1.4.2 ghc-prim-0.5.2.0
+                      hashable-1.2.7.0 integer-gmp-1.0.2.0 integer-logarithms-1.0.2.1
+                      primitive-0.6.3.0 scientific-0.3.6.2 text-1.2.3.0 text-short-0.1.2
+                      time-1.8.0.2 transformers-0.5.5.0 unordered-containers-0.2.9.0
+                      vector-0.12.0.1
+orphans: vector-0.12.0.1:Data.Vector.Unboxed
+         attoparsec-0.13.2.2:Data.Attoparsec.ByteString.Char8
+         hashable-1.2.7.0:Data.Hashable.Generic text-1.2.3.0:Data.Text.Lazy
+         text-1.2.3.0:Data.Text binary-0.8.5.1:Data.Binary.Generic
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         text-1.2.3.0:Data.Text.Show
+         vector-0.12.0.1:Data.Vector.Fusion.Bundle
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian base-4.11.1.0:GHC.Float
+         base-4.11.1.0:GHC.Base
+family instance modules: Only-0.1:Data.Tuple.Only
+                         attoparsec-0.13.2.2:Data.Attoparsec.Internal.Types
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         primitive-0.6.3.0:Control.Monad.Primitive
+                         primitive-0.6.3.0:Data.Primitive.Array
+                         primitive-0.6.3.0:Data.Primitive.ByteArray text-1.2.3.0:Data.Text
+                         text-1.2.3.0:Data.Text.Lazy
+                         text-short-0.1.2:Data.Text.Short.Internal
+                         unordered-containers-0.2.9.0:Data.HashMap.Base
+                         vector-0.12.0.1:Data.Vector vector-0.12.0.1:Data.Vector.Primitive
+                         vector-0.12.0.1:Data.Vector.Unboxed
+                         vector-0.12.0.1:Data.Vector.Unboxed.Base
+import  -/  base-4.11.1.0:Data.Either 917cb7ca74324934e13727e32d71d117
+import  -/  base-4.11.1.0:Data.Functor 920435f8ff93fffe1aec86c79e4fd45f
+import  -/  base-4.11.1.0:Data.Maybe 1f53643457b97538ca6f4ca7328e8b30
+import  -/  base-4.11.1.0:GHC.Base b7dd14d8fe8d606dde5678ea6b0575e9
+import  -/  base-4.11.1.0:GHC.IO a3e5ac541c68a1abc106e1f0d10319a4
+import  -/  base-4.11.1.0:GHC.Show 6211aec7cccd267a5ee999e4414d7b90
+import  -/  base-4.11.1.0:Prelude aca391812f777207b15d62bb5b9feb63
+import  -/  bytestring-0.10.8.2:Data.ByteString.Lazy 238696209da3e02ce3cd43ceb4046035
+import  -/  cassava-0.5.1.0:Data.Csv 4a8a257da7b82acf18ea86eea1c587e8
+import  -/  cassava-0.5.1.0:Data.Csv.Conversion da8ea50b3416c4f778aa71d7173c9b9a
+import  -/  cassava-0.5.1.0:Data.Csv.Encoding cee893990c3de1dcaf70c384c5011766
+import  -/  cassava-0.5.1.0:Data.Csv.Types 60e239de4036f80d78a883f7998c8d5b
+import  -/  containers-0.5.11.0:Data.Map.Strict ea9cec0dc7e4353594a3f7d520e82c83
+import  -/  directory-1.3.1.5:System.Directory 4575206d001b0d3464a7b9287cf2e676
+import  -/  directory-1.3.1.5:System.Directory.Internal.Common d74c803a65a464959a3007150832f056
+import  -/  ghc-prim-0.5.2.0:GHC.Classes f7d67fd97d5a20e9252c9597d1aa387b
+import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
+import  -/  Dijkstra 5b4529a292efc43362de61a8e02f9544
+  exports: b4be0d883e410f6b06a8eaf5eb4efc5f
+  Node b8e971073b402ae8cb276c6d88838133
+import  -/  FrankWolfe cc104347f1e0bbe832cc3c7b824d7fd6
+  exports: df2cfd328023378798a501c3cf94dc05
+  Trip 93371067eb07b6d21305d3a27cf5d932
+import  -/  text-1.2.3.0:Data.Text c0e21f1d8acb5250a7f89b5dc0e8964e
+import  -/  text-1.2.3.0:Data.Text.Internal e5cede27dcb0356e6560ff0df60f1395
+import  -/  vector-0.12.0.1:Data.Vector 136e29dd913b307387c1c07459bacd27
+8883c792941b289969bb4062ffc83f3a
+  $fFromNamedRecordLinkOutCsv ::
+    Data.Csv.Conversion.FromNamedRecord Csv2.LinkOutCsv
+  DFunId
+  {- Arity: 1, Strictness: <L,U>, Inline: (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Csv2.$fFromNamedRecordLinkOutCsv_$cparseNamedRecord
+                  `cast`
+                (Sym (Data.Csv.Conversion.N:FromNamedRecord[0]
+                          <Csv2.LinkOutCsv>_N)) -}
+8883c792941b289969bb4062ffc83f3a
+  $fFromNamedRecordLinkOutCsv_$cparseNamedRecord ::
+    Data.Csv.Types.NamedRecord
+    -> Data.Csv.Conversion.Parser Csv2.LinkOutCsv
+  {- Arity: 1, Strictness: <L,U> -}
+8883c792941b289969bb4062ffc83f3a
+  $fShowLinkOutCsv :: GHC.Show.Show Csv2.LinkOutCsv
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Csv2.LinkOutCsv
+                  Csv2.$fShowLinkOutCsv_$cshowsPrec
+                  Csv2.$fShowLinkOutCsv_$cshow
+                  Csv2.$fShowLinkOutCsv_$cshowList -}
+8883c792941b289969bb4062ffc83f3a
+  $fShowLinkOutCsv1 :: Csv2.LinkOutCsv -> GHC.Show.ShowS
+  {- Arity: 1, Strictness: <S,1*U(U(U),U(U),1*U(U),1*U,1*U,1*U,1*U)>,
+     Unfolding: (\ (w :: Csv2.LinkOutCsv) ->
+                 case w of ww { Csv2.LinkOutCsv ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 Csv2.$w$cshowsPrec 0# ww1 ww2 ww3 ww4 ww5 ww6 ww7 }) -}
+fc191460698f786eff5e8d8c3bed9cc5
+  $fShowLinkOutCsv2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("LinkOutCsv "#) -}
+e75cd825dec12c53f5b1da727bf83574
+  $fShowLinkOutCsv3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+d9d90cd2e92434ede6605f3385901fa9
+  $fShowLinkOutCsv4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+8883c792941b289969bb4062ffc83f3a
+  $fShowLinkOutCsv_$cshow :: Csv2.LinkOutCsv -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(U(U),U(U),1*U(U),1*U,1*U,1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Csv2.LinkOutCsv) ->
+                 Csv2.$fShowLinkOutCsv_$cshowsPrec
+                   Csv2.$fShowLinkOutCsv4
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+8883c792941b289969bb4062ffc83f3a
+  $fShowLinkOutCsv_$cshowList :: [Csv2.LinkOutCsv] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Csv2.LinkOutCsv]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ Csv2.LinkOutCsv
+                   Csv2.$fShowLinkOutCsv1
+                   ls
+                   s) -}
+8883c792941b289969bb4062ffc83f3a
+  $fShowLinkOutCsv_$cshowsPrec ::
+    GHC.Types.Int -> Csv2.LinkOutCsv -> GHC.Show.ShowS
+  {- Arity: 2,
+     Strictness: <S(S),1*U(U)><S,1*U(U(U),U(U),1*U(U),1*U,1*U,1*U,1*U)>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Csv2.LinkOutCsv) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Csv2.LinkOutCsv ww3 ww4 ww5 ww6 ww7 ww8 ww9 ->
+                 Csv2.$w$cshowsPrec ww1 ww3 ww4 ww5 ww6 ww7 ww8 ww9 } }) -}
+3f4dd3a746180e59fa285acbdbd45a5d
+  $fShowTripCsv :: GHC.Show.Show Csv2.TripCsv
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Csv2.TripCsv
+                  Csv2.$fShowTripCsv_$cshowsPrec
+                  Csv2.$fShowTripCsv_$cshow
+                  Csv2.$fShowTripCsv_$cshowList -}
+3f4dd3a746180e59fa285acbdbd45a5d
+  $fShowTripCsv1 :: Csv2.TripCsv -> GHC.Show.ShowS
+  {- Arity: 1, Strictness: <S,1*U(U(U),U(U),1*U)>,
+     Unfolding: (\ (w :: Csv2.TripCsv) ->
+                 case w of ww { Csv2.TripCsv ww1 ww2 ww3 ->
+                 Csv2.$w$cshowsPrec1 0# ww1 ww2 ww3 }) -}
+de5209bc6f59e4b5665b58d551cbeba7
+  $fShowTripCsv2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Csv2.$fShowTripCsv3) -}
+0cb5b4cda7ea204b77c8781474e5d6a6
+  $fShowTripCsv3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("TripCsv "#) -}
+3f4dd3a746180e59fa285acbdbd45a5d
+  $fShowTripCsv_$cshow :: Csv2.TripCsv -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(U(U),U(U),1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Csv2.TripCsv) ->
+                 Csv2.$fShowTripCsv_$cshowsPrec
+                   Csv2.$fShowLinkOutCsv4
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+3f4dd3a746180e59fa285acbdbd45a5d
+  $fShowTripCsv_$cshowList :: [Csv2.TripCsv] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Csv2.TripCsv]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Csv2.TripCsv Csv2.$fShowTripCsv1 ls s) -}
+3f4dd3a746180e59fa285acbdbd45a5d
+  $fShowTripCsv_$cshowsPrec ::
+    GHC.Types.Int -> Csv2.TripCsv -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(U(U),U(U),1*U)>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Csv2.TripCsv) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Csv2.TripCsv ww3 ww4 ww5 ->
+                 Csv2.$w$cshowsPrec1 ww1 ww3 ww4 ww5 } }) -}
+a6a9b3122446ec2c68593d8591cb00fb
+  $tc'LinkOutCsv :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6062434935538948285##
+                   11613168251626185929##
+                   Csv2.$trModule
+                   Csv2.$tc'LinkOutCsv2
+                   0#
+                   Csv2.$tc'LinkOutCsv1) -}
+62dc9e64c19f5c73c4872aecf21d82b4
+  $tc'LinkOutCsv1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+4a5f0a90e7247e3a66a019ba7195a214
+  $tc'LinkOutCsv2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv2.$tc'LinkOutCsv3) -}
+00187b120515fe039dc3fc724a5b37c0
+  $tc'LinkOutCsv3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'LinkOutCsv"#) -}
+d86b4ef162fa0c3021315b22089c2c3f
+  $tc'TripCsv :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9293650601536010688##
+                   11632954598581308506##
+                   Csv2.$trModule
+                   Csv2.$tc'TripCsv2
+                   0#
+                   Csv2.$tc'TripCsv1) -}
+7cc76f9deb1dbc7ce7fe0ba04117853a
+  $tc'TripCsv1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+1c96061d6abfc637096d4e508fd68716
+  $tc'TripCsv2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv2.$tc'TripCsv3) -}
+f6765777e85840c91a8569e638665cd0
+  $tc'TripCsv3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'TripCsv"#) -}
+872525bc0e5aa6dd65b86db39bcf4507
+  $tcLinkOutCsv :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9607610953161604910##
+                   17738826823513579376##
+                   Csv2.$trModule
+                   Csv2.$tcLinkOutCsv1
+                   0#
+                   GHC.Types.krep$*) -}
+f67c9276b4f7bd53af3de83b3b9d6ee5
+  $tcLinkOutCsv1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv2.$tcLinkOutCsv2) -}
+de940d177a5514984d178990c23dcfba
+  $tcLinkOutCsv2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("LinkOutCsv"#) -}
+2ecaf4bd75cbca41f495da5bf46ee69e
+  $tcTripCsv :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   490742721314911891##
+                   5488071123323903384##
+                   Csv2.$trModule
+                   Csv2.$tcTripCsv1
+                   0#
+                   GHC.Types.krep$*) -}
+00b042ee2d91f6985b6f6744f07f2e49
+  $tcTripCsv1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv2.$tcTripCsv2) -}
+1e381cc933e2dff60744de248597968f
+  $tcTripCsv2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("TripCsv"#) -}
+8d3b90b4f9e582067eeeb72379a74a7c
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Csv2.$trModule3 Csv2.$trModule1) -}
+e015235a295e70fef709267be1ab38f1
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv2.$trModule2) -}
+30e432fec6ed93c19159688975fc31d1
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Csv2"#) -}
+ccc634b0546e4b745a91ee393522ff7c
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv2.$trModule4) -}
+b502b4560aedf15ed14f8a0c40fb6e3d
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf"#) -}
+52f71e099ce4b7e1064a3a36a764c20e
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Csv2.Org
+    -> Csv2.Dest
+    -> Csv2.Dist
+    -> Csv2.Highway
+    -> Csv2.Oneway
+    -> Csv2.Bridge
+    -> Csv2.Width
+    -> GHC.Show.ShowS
+  {- Arity: 8,
+     Strictness: <S,U><L,U(U)><L,U(U)><L,1*U(U)><L,1*U><L,1*U><L,1*U><L,1*U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Csv2.Org)
+                   (ww2 :: Csv2.Dest)
+                   (ww3 :: Csv2.Dist)
+                   (ww4 :: Csv2.Highway)
+                   (ww5 :: Csv2.Oneway)
+                   (ww6 :: Csv2.Bridge)
+                   (ww7 :: Csv2.Width) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = case ww3 of ww8 { GHC.Types.D# ww9 ->
+                     GHC.Float.$w$sshowSignedFloat
+                       GHC.Float.$fShowDouble2
+                       Csv2.$fShowLinkOutCsv3
+                       ww9 }
+                 } in
+                 let {
+                   f1 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ Data.Text.Internal.Text
+                       Data.Text.Show.$fShowText
+                       Csv2.$fShowLinkOutCsv3
+                       ww4
+                 } in
+                 let {
+                   f2 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ Data.Text.Internal.Text
+                       Data.Text.Show.$fShowText
+                       Csv2.$fShowLinkOutCsv3
+                       ww5
+                 } in
+                 let {
+                   f3 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ Data.Text.Internal.Text
+                       Data.Text.Show.$fShowText
+                       Csv2.$fShowLinkOutCsv3
+                       ww6
+                 } in
+                 let {
+                   g4 :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.$fShowMaybe_$cshowsPrec
+                       @ Data.Text.Internal.Text
+                       Data.Text.Show.$fShowText
+                       Csv2.$fShowLinkOutCsv3
+                       ww7
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     GHC.CString.unpackAppendCString#
+                       Csv2.$fShowLinkOutCsv2
+                       (case ww1 of ww8 { GHC.Types.I# ww9 ->
+                        case GHC.Show.$wshowSignedInt
+                               11#
+                               ww9
+                               (GHC.Types.:
+                                  @ GHC.Types.Char
+                                  GHC.Show.showSpace1
+                                  (case ww2 of ww10 { GHC.Types.I# ww11 ->
+                                   case GHC.Show.$wshowSignedInt
+                                          11#
+                                          ww11
+                                          (GHC.Types.:
+                                             @ GHC.Types.Char
+                                             GHC.Show.showSpace1
+                                             (f (GHC.Types.:
+                                                   @ GHC.Types.Char
+                                                   GHC.Show.showSpace1
+                                                   (f1
+                                                      (GHC.Types.:
+                                                         @ GHC.Types.Char
+                                                         GHC.Show.showSpace1
+                                                         (f2
+                                                            (GHC.Types.:
+                                                               @ GHC.Types.Char
+                                                               GHC.Show.showSpace1
+                                                               (f3
+                                                                  (GHC.Types.:
+                                                                     @ GHC.Types.Char
+                                                                     GHC.Show.showSpace1
+                                                                     (g4
+                                                                        x)))))))))) of ww12 { (#,#) ww13 ww14 ->
+                                   GHC.Types.:
+                                     @ GHC.Types.Char
+                                     ww13
+                                     ww14 } })) of ww10 { (#,#) ww11 ww12 ->
+                        GHC.Types.: @ GHC.Types.Char ww11 ww12 } })
+                 } in
+                 case GHC.Prim.>=# ww 11# of lwild {
+                   DEFAULT -> p
+                   1#
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 x)) }) -}
+cf259b94297c09601713fbf12d17363a
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> Csv2.Org -> Csv2.Dest -> FrankWolfe.Trip -> GHC.Show.ShowS
+  {- Arity: 4, Strictness: <S,U><L,U(U)><L,U(U)><L,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Csv2.Org)
+                   (ww2 :: Csv2.Dest)
+                   (ww3 :: FrankWolfe.Trip) ->
+                 let {
+                   g4 :: GHC.Base.String -> GHC.Base.String
+                   = Data.Map.Internal.$w$cshowsPrec
+                       @ Dijkstra.OD
+                       @ GHC.Types.Double
+                       Dijkstra.$fShowOD
+                       GHC.Float.$fShowDouble
+                       11#
+                       ww3
+                 } in
+                 let {
+                   g5 :: GHC.Base.String -> GHC.Base.String
+                     {- Arity: 1, Strictness: <L,U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     case ww1 of ww4 { GHC.Types.I# ww5 ->
+                     case GHC.Show.$wshowSignedInt
+                            11#
+                            ww5
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.showSpace1
+                               (case ww2 of ww6 { GHC.Types.I# ww7 ->
+                                case GHC.Show.$wshowSignedInt
+                                       11#
+                                       ww7
+                                       (GHC.Types.:
+                                          @ GHC.Types.Char
+                                          GHC.Show.showSpace1
+                                          (g4 x)) of ww8 { (#,#) ww9 ww10 ->
+                                GHC.Types.:
+                                  @ GHC.Types.Char
+                                  ww9
+                                  ww10 } })) of ww6 { (#,#) ww7 ww8 ->
+                     GHC.Types.: @ GHC.Types.Char ww7 ww8 } }
+                 } in
+                 case GHC.Prim.>=# ww 11# of lwild {
+                   DEFAULT
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Base.++ @ GHC.Types.Char Csv2.$fShowTripCsv2 (g5 x)
+                   1#
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Csv2.$fShowTripCsv2
+                           (g5 (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 x))) }) -}
+cfeab8a4ab1d4ef74cc52c8459c4ae4c
+  type Bridge = GHC.Base.Maybe Data.Text.Internal.Text
+e19db68db916435eae598b4f09441126
+  type Dest = Dijkstra.Node
+eea9c3eed8bdffd8035f760a77ed22d9
+  type Dist = GHC.Types.Double
+a88a596e12c1e19c0a76f9751eec05a2
+  type Highway = GHC.Base.Maybe Data.Text.Internal.Text
+8883c792941b289969bb4062ffc83f3a
+  data LinkOutCsv
+    = LinkOutCsv Csv2.Org
+                 Csv2.Dest
+                 Csv2.Dist
+                 Csv2.Highway
+                 Csv2.Oneway
+                 Csv2.Bridge
+                 Csv2.Width
+cb5feba5e9986f2b4de65e77fac1e7bf
+  type Oneway = GHC.Base.Maybe Data.Text.Internal.Text
+d2443797233a803e3c70ca1454f8b9f4
+  type Org = Dijkstra.Node
+3f4dd3a746180e59fa285acbdbd45a5d
+  data TripCsv = TripCsv Csv2.Org Csv2.Dest FrankWolfe.Trip
+6adb3d646b539e839436f0692613fa24
+  type Width = GHC.Base.Maybe Data.Text.Internal.Text
+41d9992ace0992411e5bfa3308c98b1a
+  g ::
+    GHC.IO.FilePath
+    -> GHC.Types.IO (Data.Vector.Vector Csv2.LinkOutCsv)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Csv2.g1
+                  `cast`
+                (<GHC.IO.FilePath>_R
+                 ->_R Sym (GHC.Types.N:IO[0]
+                               <Data.Vector.Vector Csv2.LinkOutCsv>_R)) -}
+57b4b00ea8e93a052774f2bd35348e90
+  g1 ::
+    GHC.IO.FilePath
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Vector.Vector Csv2.LinkOutCsv #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (fp :: GHC.IO.FilePath)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case System.IO.Error.modifyIOError1
+                        @ GHC.Base.String
+                        System.Directory.Internal.Common.getCurrentDirectory6
+                        System.Directory.Internal.Common.getCurrentDirectory2
+                          `cast`
+                        (Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.FD.openBinaryFile1
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           ipv1
+                           (GHC.CString.unpackAppendCString# Csv2.g3 fp))
+                        GHC.IO.IOMode.ReadMode
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case Data.ByteString.Lazy.getContents2
+                        ipv3
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 (# ipv4,
+                    case Data.Csv.Encoding.$wdecodeByNameWith
+                           @ Csv2.LinkOutCsv
+                           Csv2.$fFromNamedRecordLinkOutCsv_$cparseNamedRecord
+                             `cast`
+                           (Sym (Data.Csv.Conversion.N:FromNamedRecord[0]
+                                     <Csv2.LinkOutCsv>_N))
+                           44##
+                           ipv5 of wild {
+                      Data.Either.Left ipv6
+                      -> case Csv2.g2 ret_ty (Data.Vector.Vector Csv2.LinkOutCsv) of {}
+                      Data.Either.Right ds
+                      -> case ds of wild1 { (,) ds4 ls -> ls } } #) } } }) -}
+59688210863c044da2dd325fa5e01d19
+  g2 :: (Data.Vector.Vector Csv2.LinkOutCsv)
+  {- Strictness: x -}
+738674a5161340d5520d228d1f56182e
+  g3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("/data/"#) -}
+instance Data.Csv.Conversion.FromNamedRecord [Csv2.LinkOutCsv]
+  = Csv2.$fFromNamedRecordLinkOutCsv
+instance GHC.Show.Show [Csv2.LinkOutCsv] = Csv2.$fShowLinkOutCsv
+instance GHC.Show.Show [Csv2.TripCsv] = Csv2.$fShowTripCsv
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

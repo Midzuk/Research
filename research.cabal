@@ -1,0 +1,92 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e511a46841700e1554c15edfe2bd53c764127eb2a8057dd7166727e5e0cc9929
+
+name:           research
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/research#readme>
+homepage:       https://github.com/githubuser/research#readme
+bug-reports:    https://github.com/githubuser/research/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/research
+
+library
+  exposed-modules:
+      Algorithm.FrankWolfe
+      Algorithm.Fratar
+      Algorithm.Search
+      Csv.Csv
+      Csv.LinkCsv
+      Csv.NetworkCsv
+      Csv.NodeCsv
+      Link
+  other-modules:
+      Paths_research
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , directory
+    , mtl
+    , repa
+    , text
+    , vector
+  default-language: Haskell2010
+
+executable research-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_research
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , directory
+    , mtl
+    , repa
+    , research
+    , text
+    , vector
+  default-language: Haskell2010
+
+test-suite research-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_research
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , cassava
+    , containers
+    , directory
+    , mtl
+    , repa
+    , research
+    , text
+    , vector
+  default-language: Haskell2010

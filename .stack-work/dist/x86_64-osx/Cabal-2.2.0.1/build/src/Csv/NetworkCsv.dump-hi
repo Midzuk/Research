@@ -1,0 +1,598 @@
+
+==================== FINAL INTERFACE ====================
+2018-09-18 03:57:55.232873 UTC
+
+interface research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf:Csv.NetworkCsv 8043
+  interface hash: 0da67be114c4c98122e70bd00e0240fa
+  ABI hash: 72efc84b49b567b528e7ed8311db8526
+  export-list hash: 513709dd0d207dbf29ecc5cfc6edfdd2
+  orphan hash: 95938d72641186086df22bb3ae8beb07
+  flag hash: 7788914a94773c447408ba2177f06b6b
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Csv.NetworkCsv.simplifyLinkCsv
+  Csv.NetworkCsv.simplifyNetworkCsv
+  Csv.NetworkCsv.NetworkCsv{Csv.NetworkCsv.NetworkCsv}
+  Csv.NetworkCsv.NetworkCsvInput
+  Csv.NetworkCsv.NetworkCsvOutput
+module dependencies: Csv.LinkCsv Csv.NodeCsv Link
+package dependencies: Only-0.1 array-0.5.2.0 attoparsec-0.13.2.2
+                      base-4.11.1.0 binary-0.8.5.1 bytestring-0.10.8.2 cassava-0.5.1.0
+                      containers-0.5.11.0 deepseq-1.4.3.0 directory-1.3.1.5
+                      filepath-1.4.2 ghc-prim-0.5.2.0 hashable-1.2.7.0
+                      integer-gmp-1.0.2.0 integer-logarithms-1.0.2.1 mtl-2.2.2
+                      primitive-0.6.3.0 scientific-0.3.6.2 text-1.2.3.0 text-short-0.1.2
+                      time-1.8.0.2 transformers-0.5.5.0 unix-2.7.2.2
+                      unordered-containers-0.2.9.0 vector-0.12.0.1
+orphans: vector-0.12.0.1:Data.Vector.Unboxed
+         attoparsec-0.13.2.2:Data.Attoparsec.ByteString.Char8
+         hashable-1.2.7.0:Data.Hashable.Generic text-1.2.3.0:Data.Text.Lazy
+         text-1.2.3.0:Data.Text binary-0.8.5.1:Data.Binary.Generic
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         text-1.2.3.0:Data.Text.Show time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         vector-0.12.0.1:Data.Vector.Fusion.Bundle
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: Only-0.1:Data.Tuple.Only
+                         attoparsec-0.13.2.2:Data.Attoparsec.Internal.Types
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         primitive-0.6.3.0:Control.Monad.Primitive
+                         primitive-0.6.3.0:Data.Primitive.Array
+                         primitive-0.6.3.0:Data.Primitive.ByteArray text-1.2.3.0:Data.Text
+                         text-1.2.3.0:Data.Text.Lazy
+                         text-short-0.1.2:Data.Text.Short.Internal
+                         unordered-containers-0.2.9.0:Data.HashMap.Base
+                         vector-0.12.0.1:Data.Vector vector-0.12.0.1:Data.Vector.Primitive
+                         vector-0.12.0.1:Data.Vector.Unboxed
+                         vector-0.12.0.1:Data.Vector.Unboxed.Base
+import  -/  base-4.11.1.0:Data.Maybe 409c3da2b142470b68be39ce1d97a9f7
+import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
+import  -/  base-4.11.1.0:GHC.Show 73be67392447c974f19c3befd83c46c0
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  containers-0.5.11.0:Data.Map.Internal 0150e210d0ae8df0f3a0669d5e32d8fa
+import  -/  containers-0.5.11.0:Data.Map.Strict 40ac55e8c7db7b7f0f7e3d9769233909
+import  -/  containers-0.5.11.0:Data.Set 7d3c64a641be4cacbcd8119445bab919
+import  -/  containers-0.5.11.0:Data.Set.Internal 93fa3ef95853aa2a7aadf32d693bd451
+import  -/  ghc-prim-0.5.2.0:GHC.Classes 122abfcd7450c6c11602933c9ca5f80d
+import  -/  mtl-2.2.2:Control.Monad.State.Strict 1e754e72015d9d47fa64d071c3f0085b
+import  -/  Csv.LinkCsv 1e7eadaa01e70a51c969febed667b795
+  exports: 24dad1b179daa91250b5e8374648257a
+  LinkCsv 16889e475a6eb48d083a4be31750ff07
+  LinkWithCond 5b4d56a3ff23dfeafaf1ab93c50dfccc
+import  -/  Csv.NodeCsv b2a7c1b27790cb02bc41fa460a1483e3
+  exports: 59726a1f16aa19b5e90d3091257628d3
+  NodeCsv 2ffb6ceb0d0a0aa089df94bfdb3e3e99
+import  -/  Link 36270363ad7f412211c4e09ae502a585
+  exports: 105fd085ce7618b18ef07ad8e01e8736
+  :->: 9b4588c58a36c8d815d4a520c8ec435a
+  Link e5397a8dd2b204020630100edccfb9d2
+  Node 2efbb1a25108c6ecfb7204ecf0f77c11
+  composeLink 7f0058c720c99e1bf5af80fa1b00cb30
+  isNextLink d7769b935ab0ecbf6ea22f0385211b8f
+import  -/  vector-0.12.0.1:Data.Vector a3a00743437ee8354b7b63f8638591df
+a2b567fd3155e8a24fa1c7a180d359e8
+  $fShowNetworkCsv :: GHC.Show.Show Csv.NetworkCsv.NetworkCsv
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Csv.NetworkCsv.NetworkCsv
+                  Csv.NetworkCsv.$fShowNetworkCsv_$cshowsPrec
+                  Csv.NetworkCsv.$fShowNetworkCsv_$cshow
+                  Csv.NetworkCsv.$fShowNetworkCsv_$cshowList -}
+a2b567fd3155e8a24fa1c7a180d359e8
+  $fShowNetworkCsv1 :: Csv.NetworkCsv.NetworkCsv -> GHC.Show.ShowS
+  {- Arity: 1, Strictness: <S,1*U(1*U(U,U,U),1*U)>,
+     Unfolding: (\ (w :: Csv.NetworkCsv.NetworkCsv) ->
+                 case w of ww { Csv.NetworkCsv.NetworkCsv ww1 ww2 ->
+                 Csv.NetworkCsv.$w$cshowsPrec 0# ww1 ww2 }) -}
+2abb7ac79e7e1c200c8ee98119e04cb6
+  $fShowNetworkCsv2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+a2b567fd3155e8a24fa1c7a180d359e8
+  $fShowNetworkCsv_$cshow ::
+    Csv.NetworkCsv.NetworkCsv -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U(U,U,U),1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Csv.NetworkCsv.NetworkCsv) ->
+                 Csv.NetworkCsv.$fShowNetworkCsv_$cshowsPrec
+                   Csv.NetworkCsv.$fShowNetworkCsv2
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+a2b567fd3155e8a24fa1c7a180d359e8
+  $fShowNetworkCsv_$cshowList ::
+    [Csv.NetworkCsv.NetworkCsv] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Csv.NetworkCsv.NetworkCsv]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ Csv.NetworkCsv.NetworkCsv
+                   Csv.NetworkCsv.$fShowNetworkCsv1
+                   ls
+                   s) -}
+a2b567fd3155e8a24fa1c7a180d359e8
+  $fShowNetworkCsv_$cshowsPrec ::
+    GHC.Types.Int -> Csv.NetworkCsv.NetworkCsv -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(1*U(U,U,U),1*U)>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Csv.NetworkCsv.NetworkCsv) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Csv.NetworkCsv.NetworkCsv ww3 ww4 ->
+                 Csv.NetworkCsv.$w$cshowsPrec ww1 ww3 ww4 } }) -}
+7f05d73802af2f6dae2a9c31642691af
+  $s$fShow(,) :: GHC.Show.Show (GHC.Types.Double, GHC.Types.Double)
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Double, GHC.Types.Double)
+                  (GHC.Show.$fShow(,)_$cshowsPrec
+                     @ GHC.Types.Double
+                     @ GHC.Types.Double
+                     GHC.Float.$fShowDouble
+                     GHC.Float.$fShowDouble)
+                  (\ (x :: (GHC.Types.Double, GHC.Types.Double)) ->
+                   GHC.Show.$fShow(,)_$cshowsPrec
+                     @ GHC.Types.Double
+                     @ GHC.Types.Double
+                     GHC.Float.$fShowDouble
+                     GHC.Float.$fShowDouble
+                     GHC.Show.$fShow(,)1
+                     x
+                     (GHC.Types.[] @ GHC.Types.Char))
+                  (\ (ls :: [(GHC.Types.Double, GHC.Types.Double)])
+                     (s :: GHC.Base.String) ->
+                   GHC.Show.showList__
+                     @ (GHC.Types.Double, GHC.Types.Double)
+                     (GHC.Show.$fShow(,)_$cshowsPrec
+                        @ GHC.Types.Double
+                        @ GHC.Types.Double
+                        GHC.Float.$fShowDouble
+                        GHC.Float.$fShowDouble
+                        GHC.Show.$fShow(,)1)
+                     ls
+                     s) -}
+0c8885f50648ba63ae68eae8f597cb42
+  $smember_go3 ::
+    Link.Node -> Data.Set.Internal.Set Link.Node -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S,1*U>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Link.Node) (w1 :: Data.Set.Internal.Set Link.Node) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Csv.NetworkCsv.$wgo3 ww1 w1 }) -}
+7f34ad2f9ba3cdb2aa7d2398dd3a689e
+  $tc'NetworkCsv :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13571993628745108614##
+                   8225876069628717504##
+                   Csv.NetworkCsv.$trModule
+                   Csv.NetworkCsv.$tc'NetworkCsv2
+                   0#
+                   Csv.NetworkCsv.$tc'NetworkCsv1) -}
+3d95314493924b6fc75ea96a524f302b
+  $tc'NetworkCsv1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+30982e2d4778c29f9ed825c6c5bed58f
+  $tc'NetworkCsv2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv.NetworkCsv.$tc'NetworkCsv3) -}
+07422523861c04becddcd62e4e4a88ab
+  $tc'NetworkCsv3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'NetworkCsv"#) -}
+1f2082b0982041eba39f6d51604342d8
+  $tcNetworkCsv :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7435953324759118424##
+                   3601808912366413856##
+                   Csv.NetworkCsv.$trModule
+                   Csv.NetworkCsv.$tcNetworkCsv1
+                   0#
+                   GHC.Types.krep$*) -}
+5664ac8967d84163c164ed23e48e6807
+  $tcNetworkCsv1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv.NetworkCsv.$tcNetworkCsv2) -}
+bec11107050f45e025f94f9dc2e2eb7f
+  $tcNetworkCsv2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("NetworkCsv"#) -}
+c21b114e3ed231b0d68b8839fc26abfb
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Csv.NetworkCsv.$trModule3
+                   Csv.NetworkCsv.$trModule1) -}
+1ffe8cb99ddf8f52b07677a8be407ed5
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv.NetworkCsv.$trModule2) -}
+696253074d3a5973a9282dca8b3f9f1d
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Csv.NetworkCsv"#) -}
+828dd0cb910648c530b2b129f33b9c10
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv.NetworkCsv.$trModule4) -}
+3bc63f7575102ade9a7c827c2845079e
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf"#) -}
+6d73166149712880f867bc39db0829de
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Csv.LinkCsv.LinkCsv -> Csv.NodeCsv.NodeCsv -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,U><L,1*U(U,U,U)><L,1*U>, Inline: [0] -}
+a0abf1b418a0fefe75180aebb7c14eaa
+  $w$sgo3 ::
+    Link.Node
+    -> GHC.Prim.Int#
+    -> Data.Set.Internal.Set Link.Node
+    -> Data.Set.Internal.Set Link.Node
+  {- Arity: 3, Strictness: <L,U><L,U><S,1*U>, Inline: [0] -}
+23c14e3a7fc2810e9a4611615becec13
+  $wf ::
+    Link.Link
+    -> Csv.LinkCsv.LinkCond
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Array# Csv.LinkCsv.LinkWithCond
+    -> Csv.LinkCsv.LinkCsv
+  {- Arity: 5, Strictness: <L,U(U,U(U))><L,U(U,U,U)><L,U><S,U><L,U>,
+     Inline: [0] -}
+aa3d317c5935b0deeac585d739a5f999
+  $wgo3 ::
+    GHC.Prim.Int# -> Data.Set.Internal.Set Link.Node -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>, Inline: [0] -}
+3288ea2449d6522567c7774bfddf722b
+  $wsimplifyLinkCsv ::
+    GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Array# Csv.LinkCsv.LinkWithCond
+    -> Data.Vector.Fusion.Util.Id Csv.LinkCsv.LinkCsv
+  {- Arity: 3, Strictness: <L,U><S,U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Prim.Int#)
+                   (ww2 :: GHC.Prim.Array# Csv.LinkCsv.LinkWithCond) ->
+                 letrec {
+                   $wfoldrM_loop :: GHC.Types.SPEC
+                                    -> GHC.Prim.Int#
+                                    -> Data.Vector.Fusion.Util.Id Csv.LinkCsv.LinkCsv
+                     {- Arity: 2, Strictness: <S,1*U><S,U>, Inline: [0] -}
+                   = \ (w :: GHC.Types.SPEC) (ww3 :: GHC.Prim.Int#) ->
+                     case w of ds5 { DEFAULT ->
+                     case GHC.Prim.>=# ww3 ww1 of lwild {
+                       DEFAULT
+                       -> case GHC.Prim.indexArray#
+                                 @ Csv.LinkCsv.LinkWithCond
+                                 ww2
+                                 (GHC.Prim.+# ww ww3) of ds3 { Unit# ipv ->
+                          case ipv of ww4 { (,) ww5 ww6 ->
+                          case ($wfoldrM_loop GHC.Types.SPEC (GHC.Prim.+# ww3 1#))
+                                 `cast`
+                               (Data.Vector.Fusion.Util.N:Id[0]
+                                    <Csv.LinkCsv.LinkCsv>_R) of ww7 { Data.Vector.Vector ww8 ww9 ww10 ->
+                          (Csv.NetworkCsv.$wf ww5 ww6 ww8 ww9 ww10)
+                            `cast`
+                          (Sym (Data.Vector.Fusion.Util.N:Id[0]
+                                    <Csv.LinkCsv.LinkCsv>_R)) } } }
+                       1#
+                       -> Csv.NetworkCsv.simplifyLinkCsv_z
+                            `cast`
+                          (Sym (Data.Vector.Fusion.Util.N:Id[0] <Csv.LinkCsv.LinkCsv>_R)) } }
+                 } in
+                 $wfoldrM_loop GHC.Types.SPEC 0#) -}
+fda0c27b54b29a7b99d73ad651b2f55f
+  $wsimplifyNetworkCsv ::
+    Csv.LinkCsv.LinkCsv
+    -> Csv.NodeCsv.NodeCsv
+    -> (# Csv.LinkCsv.LinkCsv, Csv.NodeCsv.NodeCsv #)
+  {- Arity: 2, Strictness: <L,1*U(U,U,U)><L,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: Csv.LinkCsv.LinkCsv)
+                   (ww1 :: Csv.NodeCsv.NodeCsv) ->
+                 let {
+                   lco :: Data.Vector.Fusion.Util.Id Csv.LinkCsv.LinkCsv
+                   = case ww of v2 { Data.Vector.Vector ipv ipv1 ipv2 ->
+                     letrec {
+                       $wfoldrM_loop :: GHC.Types.SPEC
+                                        -> GHC.Prim.Int#
+                                        -> Data.Vector.Fusion.Util.Id Csv.LinkCsv.LinkCsv
+                         {- Arity: 2, Strictness: <S,1*U><S,U>, Inline: [0] -}
+                       = \ (w :: GHC.Types.SPEC) (ww2 :: GHC.Prim.Int#) ->
+                         case w of ds5 { DEFAULT ->
+                         case GHC.Prim.>=# ww2 ipv1 of lwild {
+                           DEFAULT
+                           -> case GHC.Prim.indexArray#
+                                     @ Csv.LinkCsv.LinkWithCond
+                                     ipv2
+                                     (GHC.Prim.+# ipv ww2) of ds3 { Unit# ipv3 ->
+                              case ipv3 of ww3 { (,) ww4 ww5 ->
+                              case ($wfoldrM_loop GHC.Types.SPEC (GHC.Prim.+# ww2 1#))
+                                     `cast`
+                                   (Data.Vector.Fusion.Util.N:Id[0]
+                                        <Csv.LinkCsv.LinkCsv>_R) of ww6 { Data.Vector.Vector ww7 ww8 ww9 ->
+                              (Csv.NetworkCsv.$wf ww4 ww5 ww7 ww8 ww9)
+                                `cast`
+                              (Sym (Data.Vector.Fusion.Util.N:Id[0]
+                                        <Csv.LinkCsv.LinkCsv>_R)) } } }
+                           1#
+                           -> Csv.NetworkCsv.simplifyLinkCsv_z
+                                `cast`
+                              (Sym (Data.Vector.Fusion.Util.N:Id[0] <Csv.LinkCsv.LinkCsv>_R)) } }
+                     } in
+                     $wfoldrM_loop GHC.Types.SPEC 0# }
+                 } in
+                 (# lco
+                      `cast`
+                    (Data.Vector.Fusion.Util.N:Id[0] <Csv.LinkCsv.LinkCsv>_R),
+                    let {
+                      nodes :: Data.Vector.Fusion.Util.Id
+                                 (Data.Set.Internal.Set Link.Node)
+                      = case lco
+                               `cast`
+                             (Data.Vector.Fusion.Util.N:Id[0]
+                                  <Csv.LinkCsv.LinkCsv>_R) of v2 { Data.Vector.Vector ipv ipv1 ipv2 ->
+                        letrec {
+                          $wfoldrM_loop :: GHC.Types.SPEC
+                                           -> GHC.Prim.Int#
+                                           -> Data.Vector.Fusion.Util.Id
+                                                (Data.Set.Internal.Set Link.Node)
+                            {- Arity: 2, Strictness: <S,1*U><S,U>, Inline: [0] -}
+                          = \ (w :: GHC.Types.SPEC) (ww2 :: GHC.Prim.Int#) ->
+                            case w of ds5 { DEFAULT ->
+                            case GHC.Prim.>=# ww2 ipv1 of lwild {
+                              DEFAULT
+                              -> case GHC.Prim.indexArray#
+                                        @ (Link.Link, Csv.LinkCsv.LinkCond)
+                                        ipv2
+                                        (GHC.Prim.+# ipv ww2) of ds3 { Unit# ipv3 ->
+                                 case ipv3 of wild { (,) ds ds1 ->
+                                 case ds of wild1 { Link.Link g ds2 ->
+                                 case Link.compose g of wild2 { Link.:->: org_ dest_ ->
+                                 case org_ of ww3 { GHC.Types.I# ww4 ->
+                                 case dest_ of ww5 { GHC.Types.I# ww6 ->
+                                 (Csv.NetworkCsv.$w$sgo3
+                                    ww3
+                                    ww4
+                                    (Csv.NetworkCsv.$w$sgo3
+                                       ww5
+                                       ww6
+                                       ($wfoldrM_loop GHC.Types.SPEC (GHC.Prim.+# ww2 1#))
+                                         `cast`
+                                       (Data.Vector.Fusion.Util.N:Id[0]
+                                            <Data.Set.Internal.Set Link.Node>_R)))
+                                   `cast`
+                                 (Sym (Data.Vector.Fusion.Util.N:Id[0]
+                                           <Data.Set.Internal.Set Link.Node>_R)) } } } } } }
+                              1#
+                              -> (Data.Set.Internal.Tip @ Link.Node)
+                                   `cast`
+                                 (Sym (Data.Vector.Fusion.Util.N:Id[0]
+                                           <Data.Set.Internal.Set Link.Node>_R)) } }
+                        } in
+                        $wfoldrM_loop GHC.Types.SPEC 0# }
+                    } in
+                    Data.Map.Internal.filterWithKey
+                      @ Link.Node
+                      @ (Csv.NodeCsv.Lat, Csv.NodeCsv.Long)
+                      (\ (node_ :: Link.Node)
+                         (ds :: (Csv.NodeCsv.Lat, Csv.NodeCsv.Long))[OneShot] ->
+                       Csv.NetworkCsv.$smember_go3
+                         node_
+                         nodes
+                           `cast`
+                         (Data.Vector.Fusion.Util.N:Id[0]
+                              <Data.Set.Internal.Set Link.Node>_R))
+                      ww1 #)) -}
+a2b567fd3155e8a24fa1c7a180d359e8
+  data NetworkCsv
+    = NetworkCsv Csv.LinkCsv.LinkCsv Csv.NodeCsv.NodeCsv
+f4cc8baf5132c3ce4364b8b369e8d5ee
+  type NetworkCsvInput = Csv.NetworkCsv.NetworkCsv
+e4947afdfe2bb4fa7a068d632b21392e
+  type NetworkCsvOutput = Csv.NetworkCsv.NetworkCsv
+6ebc0d82563c7f61a6ba8261bb09e374
+  simplifyLinkCsv :: Csv.LinkCsv.LinkCsv -> Csv.LinkCsv.LinkCsv
+  {- Arity: 1, Strictness: <S(SSS),1*U(U,U,U)>,
+     Unfolding: InlineRule (0, True, True)
+                Csv.NetworkCsv.simplifyLinkCsv1
+                  `cast`
+                (<Data.Vector.Vector Csv.LinkCsv.LinkWithCond>_R
+                 ->_R Data.Vector.Fusion.Util.N:Id[0] <Csv.LinkCsv.LinkCsv>_R) -}
+13a6b22a70f30356c349cbfff76dbfda
+  simplifyLinkCsv1 ::
+    Data.Vector.Vector Csv.LinkCsv.LinkWithCond
+    -> Data.Vector.Fusion.Util.Id Csv.LinkCsv.LinkCsv
+  {- Arity: 1, Strictness: <S(SSS),1*U(U,U,U)>, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Data.Vector.Vector Csv.LinkCsv.LinkWithCond) ->
+                 case w of ww { Data.Vector.Vector ww1 ww2 ww3 ->
+                 Csv.NetworkCsv.$wsimplifyLinkCsv ww1 ww2 ww3 }) -}
+e540295cd0595641b892ed60297972a3
+  simplifyLinkCsv2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Vector.Vector (Link.Link, Csv.LinkCsv.LinkCond) #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newArray#
+                        @ (Link.Link, Csv.LinkCsv.LinkCond)
+                        @ (Control.Monad.Primitive.PrimState
+                             (GHC.ST.ST GHC.Prim.RealWorld))
+                        0#
+                        (Data.Vector.Mutable.uninitialised
+                           @ (Link.Link, Csv.LinkCsv.LinkCond))
+                        s1
+                          `cast`
+                        (GHC.Prim.State#
+                           (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                     <GHC.Prim.RealWorld>_N)))_R of ds2 { (#,#) ipv ipv1 ->
+                 let {
+                   exit :: GHC.Prim.Int#
+                           -> GHC.Prim.State# GHC.Prim.RealWorld
+                           -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                 Data.Vector.Vector (Link.Link, Csv.LinkCsv.LinkCond) #)
+                     <join 2> {- Arity: 2, Strictness: <L,U><S,U> -}
+                   = \ (ww :: GHC.Prim.Int#)[OneShot]
+                       (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                     case GHC.Prim.unsafeFreezeArray#
+                            @ (Control.Monad.Primitive.PrimState
+                                 (GHC.ST.ST GHC.Prim.RealWorld))
+                            @ (Link.Link, Csv.LinkCsv.LinkCond)
+                            ipv1
+                            w `cast`
+                            (GHC.Prim.State#
+                               (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                         <GHC.Prim.RealWorld>_N)))_R of ds1 { (#,#) ipv2 ipv3 ->
+                     (# ipv2
+                          `cast`
+                        (GHC.Prim.State#
+                           (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                <GHC.Prim.RealWorld>_N))_R,
+                        Data.Vector.Vector
+                          @ (Link.Link, Csv.LinkCsv.LinkCond)
+                          0#
+                          ww
+                          ipv3 #) }
+                 } in
+                 let {
+                   exit1 :: GHC.Prim.Int#
+                            -> GHC.Prim.State# GHC.Prim.RealWorld
+                            -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                  Data.Vector.Vector (Link.Link, Csv.LinkCsv.LinkCond) #)
+                     <join 2> {- Arity: 2, Strictness: <L,U><S,U> -}
+                   = \ (ww :: GHC.Prim.Int#)[OneShot]
+                       (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                     case GHC.Prim.unsafeFreezeArray#
+                            @ (Control.Monad.Primitive.PrimState
+                                 (GHC.ST.ST GHC.Prim.RealWorld))
+                            @ (Link.Link, Csv.LinkCsv.LinkCond)
+                            ipv1
+                            w `cast`
+                            (GHC.Prim.State#
+                               (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                         <GHC.Prim.RealWorld>_N)))_R of ds1 { (#,#) ipv2 ipv3 ->
+                     (# ipv2
+                          `cast`
+                        (GHC.Prim.State#
+                           (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                <GHC.Prim.RealWorld>_N))_R,
+                        Data.Vector.Vector
+                          @ (Link.Link, Csv.LinkCsv.LinkCond)
+                          0#
+                          ww
+                          ipv3 #) }
+                 } in
+                 letrec {
+                   $wfoldlM'_loop :: GHC.Types.SPEC
+                                     -> GHC.Prim.Int#
+                                     -> [(Link.Link, Csv.LinkCsv.LinkCond)]
+                                     -> GHC.Prim.Int#
+                                     -> GHC.Prim.State# GHC.Prim.RealWorld
+                                     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                           Data.Vector.Vector (Link.Link, Csv.LinkCsv.LinkCond) #)
+                     <join 5> {- Arity: 5, Strictness: <S,1*U><S,U><L,1*U><S,U><S,U>,
+                                 Inline: [0] -}
+                   = \ (w :: GHC.Types.SPEC)
+                       (ww :: GHC.Prim.Int#)
+                       (ww1 :: [(Link.Link, Csv.LinkCsv.LinkCond)])
+                       (ww2 :: GHC.Prim.Int#)
+                       (w1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                     case w of ds5 { DEFAULT ->
+                     case GHC.Prim.<=# ww2 0# of lwild {
+                       DEFAULT
+                       -> case ww1 of wild2 {
+                            [] -> exit ww w1
+                            : x xs1
+                            -> case GHC.Prim.writeArray#
+                                      @ (Control.Monad.Primitive.PrimState
+                                           (GHC.ST.ST GHC.Prim.RealWorld))
+                                      @ (Link.Link, Csv.LinkCsv.LinkCond)
+                                      ipv1
+                                      ww
+                                      x
+                                      w1
+                                        `cast`
+                                      (GHC.Prim.State#
+                                         (Sym (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                                   <GHC.Prim.RealWorld>_N)))_R of s'# { DEFAULT ->
+                               $wfoldlM'_loop
+                                 GHC.Types.SPEC
+                                 (GHC.Prim.+# ww 1#)
+                                 xs1
+                                 (GHC.Prim.-# ww2 1#)
+                                 s'#
+                                   `cast`
+                                 (GHC.Prim.State#
+                                    (Control.Monad.Primitive.D:R:PrimStateST[0]
+                                         <GHC.Prim.RealWorld>_N))_R } }
+                       1# -> exit1 ww w1 } }
+                 } in
+                 $wfoldlM'_loop
+                   GHC.Types.SPEC
+                   0#
+                   (GHC.Types.[] @ (GHC.Exts.Item Csv.LinkCsv.LinkCsv))
+                     `cast`
+                   ([Sub (Data.Vector.D:R:ItemVector[0]
+                              <(Link.Link, Csv.LinkCsv.LinkCond)>_N)])_R
+                   0#
+                   ipv
+                     `cast`
+                   (GHC.Prim.State#
+                      (Control.Monad.Primitive.D:R:PrimStateST[0]
+                           <GHC.Prim.RealWorld>_N))_R }) -}
+9978bab2ea25ed3b56415912feeba0a2
+  simplifyLinkCsv_z :: Csv.LinkCsv.LinkCsv
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ ('GHC.Types.TupleRep
+                             '['GHC.Types.TupleRep '[], 'GHC.Types.LiftedRep])
+                        @ (# GHC.Prim.State# GHC.Prim.RealWorld,
+                             Data.Vector.Vector (Link.Link, Csv.LinkCsv.LinkCond) #)
+                        Csv.NetworkCsv.simplifyLinkCsv2 of ds1 { (#,#) ipv1 ipv2 ->
+                 ipv2 }) -}
+91ea0ae36187684bc952cc330cc4b7e5
+  simplifyNetworkCsv ::
+    Csv.NetworkCsv.NetworkCsv -> Csv.NetworkCsv.NetworkCsv
+  {- Arity: 1, Strictness: <S,1*U(1*U(U,U,U),1*U)>m, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Csv.NetworkCsv.NetworkCsv) ->
+                 case w of ww { Csv.NetworkCsv.NetworkCsv ww1 ww2 ->
+                 case Csv.NetworkCsv.$wsimplifyNetworkCsv
+                        ww1
+                        ww2 of ww3 { (#,#) ww4 ww5 ->
+                 Csv.NetworkCsv.NetworkCsv ww4 ww5 } }) -}
+instance GHC.Show.Show [Csv.NetworkCsv.NetworkCsv]
+  = Csv.NetworkCsv.$fShowNetworkCsv
+"SPEC/Csv.NetworkCsv $fShow(,) @ Double @ Double" [orphan] forall (v1 :: GHC.Show.Show
+                                                                           GHC.Types.Double)
+                                                                  (v :: GHC.Show.Show
+                                                                          GHC.Types.Double)
+  GHC.Show.$fShow(,) @ GHC.Types.Double @ GHC.Types.Double v v1
+  = Csv.NetworkCsv.$s$fShow(,)
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

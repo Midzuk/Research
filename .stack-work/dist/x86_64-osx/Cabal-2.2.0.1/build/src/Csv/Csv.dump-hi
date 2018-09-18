@@ -1,0 +1,55 @@
+
+==================== FINAL INTERFACE ====================
+2018-09-17 03:26:48.547574 UTC
+
+interface research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf:Csv.Csv 8043
+  interface hash: 8a5bf0967ed3086a6a165d6fa47afdd4
+  ABI hash: 8273f9cb503e0a8e563067789a28b651
+  export-list hash: 4c60335bda453a1f176035de6f023917
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 18796f464eedb759b8f7da9f69f8d7ec
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+module dependencies:
+package dependencies: base-4.11.1.0* ghc-prim-0.5.2.0
+                      integer-gmp-1.0.2.0
+orphans: base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity base-4.11.1.0:Data.Monoid
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:GHC.Generics
+                         base-4.11.1.0:GHC.IO.Exception
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+83dad0761c25edefa54c2f1af1fb912a
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Csv.Csv.$trModule3
+                   Csv.Csv.$trModule1) -}
+123289264aab8d95aa61fb1048b24ba2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv.Csv.$trModule2) -}
+00d2f806078a2937a484963766e43d2f
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Csv.Csv"#) -}
+e8f3de0eac87246c8105d38d11cdf081
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Csv.Csv.$trModule4) -}
+50bcc3795a375d2ddf834447ff069658
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

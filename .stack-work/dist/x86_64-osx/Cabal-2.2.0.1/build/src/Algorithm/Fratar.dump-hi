@@ -1,0 +1,192 @@
+
+==================== FINAL INTERFACE ====================
+2018-09-17 03:26:48.107033 UTC
+
+interface research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf:Algorithm.Fratar 8043
+  interface hash: bb6394c343472fe3b285cd1761376ebe
+  ABI hash: f6ce9c45ba568f011adee1402bc2161d
+  export-list hash: 1c1ff6c1c3fc9b6e976a1c8b221bbe1f
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: cbb45cc3775ca535357e042d5577bb2f
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Algorithm.Fratar.fratar
+module dependencies:
+package dependencies: QuickCheck-2.11.3 array-0.5.2.0 base-4.11.1.0
+                      bytestring-0.10.8.2 containers-0.5.11.0 deepseq-1.4.3.0
+                      ghc-prim-0.5.2.0 integer-gmp-1.0.2.0 mtl-2.2.2 primitive-0.6.3.0
+                      random-1.1 repa-3.4.1.3 tf-random-0.5 time-1.8.0.2
+                      transformers-0.5.5.0 vector-0.12.0.1
+orphans: repa-3.4.1.3:Data.Array.Repa.Operators.Reduction
+         repa-3.4.1.3:Data.Array.Repa.Arbitrary
+         time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         vector-0.12.0.1:Data.Vector.Unboxed
+         vector-0.12.0.1:Data.Vector.Fusion.Bundle
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Complex base-4.11.1.0:Data.Functor.Compose
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal
+                         primitive-0.6.3.0:Control.Monad.Primitive
+                         primitive-0.6.3.0:Data.Primitive.Array
+                         primitive-0.6.3.0:Data.Primitive.ByteArray
+                         repa-3.4.1.3:Data.Array.Repa.Operators.Mapping
+                         repa-3.4.1.3:Data.Array.Repa.Repr.ByteString
+                         repa-3.4.1.3:Data.Array.Repa.Repr.Cursored
+                         repa-3.4.1.3:Data.Array.Repa.Repr.Delayed
+                         repa-3.4.1.3:Data.Array.Repa.Repr.ForeignPtr
+                         repa-3.4.1.3:Data.Array.Repa.Repr.HintInterleave
+                         repa-3.4.1.3:Data.Array.Repa.Repr.HintSmall
+                         repa-3.4.1.3:Data.Array.Repa.Repr.Partitioned
+                         repa-3.4.1.3:Data.Array.Repa.Repr.Unboxed
+                         repa-3.4.1.3:Data.Array.Repa.Repr.Undefined
+                         repa-3.4.1.3:Data.Array.Repa.Repr.Vector
+                         repa-3.4.1.3:Data.Array.Repa.Slice vector-0.12.0.1:Data.Vector
+                         vector-0.12.0.1:Data.Vector.Primitive
+                         vector-0.12.0.1:Data.Vector.Unboxed
+                         vector-0.12.0.1:Data.Vector.Unboxed.Base
+import  -/  base-4.11.1.0:Data.Functor f522c3501272159820fd6f242510732f
+import  -/  base-4.11.1.0:Data.Functor.Identity 9430dcaadd71c129eeb5ca7b963c9b54
+import  -/  base-4.11.1.0:Data.Tuple 3af66f3ac61ed95ba8a3a3f68ebc5003
+import  -/  base-4.11.1.0:Debug.Trace 3062f7167e3b4d38ffd41be499676d90
+import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
+import  -/  base-4.11.1.0:GHC.Num 8e54b26dce4495382dc4b50cf36ab754
+import  -/  base-4.11.1.0:GHC.Real b4beb0389ba1ad5d9640aae67848c5d3
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  base-4.11.1.0:Unsafe.Coerce f47217db527ff78f81a441313a07e6b2
+import  -/  ghc-prim-0.5.2.0:GHC.Classes 122abfcd7450c6c11602933c9ca5f80d
+import  -/  mtl-2.2.2:Control.Monad.Identity ca9e9b9bfa404d3d70994a432bbadd6d
+import  -/  repa-3.4.1.3:Data.Array.Repa 2c9e617a64596498c6cfa5559947d6ff
+import  -/  repa-3.4.1.3:Data.Array.Repa.Base 2d859e86169175543171fbdf084887ea
+import  -/  repa-3.4.1.3:Data.Array.Repa.Index 2d0199c9e9646d30a6a5de74c75c3c3e
+import  -/  repa-3.4.1.3:Data.Array.Repa.Operators.IndexSpace 38749e82c403cffcb9e840a1efaee63b
+import  -/  repa-3.4.1.3:Data.Array.Repa.Operators.Mapping aecb2308c5e02978e65e8d96c1894dd3
+import  -/  repa-3.4.1.3:Data.Array.Repa.Operators.Reduction e7c02ec9e7d3d7bd6162bcf9ddba23c7
+import  -/  repa-3.4.1.3:Data.Array.Repa.Repr.Unboxed 18ed2f257e2b63212795a3edda9d0296
+import  -/  vector-0.12.0.1:Data.Vector.Unboxed 9fe0b87abfc01c1f23e33f801dfb966f
+98906c0dde0c16f4015a39aa02bfded5
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Algorithm.Fratar.$trModule3
+                   Algorithm.Fratar.$trModule1) -}
+a19aa80ede7775ec646ae1c45374d721
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Algorithm.Fratar.$trModule2) -}
+37623fccf984ed87c192b2db86973f60
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Algorithm.Fratar"#) -}
+3604b787d52dd8e9032f66b776db7c42
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Algorithm.Fratar.$trModule4) -}
+10bfc53fa929b78d1baef97ed368a8f4
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("research-0.1.0.0-j7VdR2I2YJJFJBbRfx0Cf"#) -}
+85445301fe3bcf7e6ab9611fe82e87d8
+  $wfratar ::
+    Algorithm.Fratar.ConvergenceCriterion
+    -> Data.Array.Repa.Index.DIM0
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Prim.ByteArray#
+    -> Algorithm.Fratar.TripGeneration
+    -> Algorithm.Fratar.TripAttraction
+    -> (# Data.Array.Repa.Index.DIM2,
+          Data.Vector.Unboxed.Base.Vector GHC.Types.Double #)
+  {- Arity: 9,
+     Strictness: <L,U(U)><L,U><S,U><L,U><L,U><L,U><L,U><L,U(A,U(U,U,U))><L,U(A,U(U,U,U))>,
+     Inline: [0] -}
+201684efd3a408f9801781b3fee6db62
+  type ConvergenceCriterion = GHC.Types.Double
+8228683d371bf229bd71da183a759c2a
+  type ODMatrix =
+    Data.Array.Repa.Base.Array
+      Data.Array.Repa.Repr.Unboxed.U
+      Data.Array.Repa.Index.DIM2
+      GHC.Types.Double
+20e062baaf5efbf7326d3dd75c50bb9b
+  type TripAttraction =
+    Data.Array.Repa.Base.Array
+      Data.Array.Repa.Repr.Unboxed.U
+      Data.Array.Repa.Index.DIM1
+      GHC.Types.Double
+c1a9ca36214f1ebb3a109b0ad70a18e6
+  type TripGeneration =
+    Data.Array.Repa.Base.Array
+      Data.Array.Repa.Repr.Unboxed.U
+      Data.Array.Repa.Index.DIM1
+      GHC.Types.Double
+a5ddd95bafaa17c8868c2db56092e74f
+  fratar ::
+    Algorithm.Fratar.ConvergenceCriterion
+    -> Algorithm.Fratar.ODMatrix
+    -> Algorithm.Fratar.TripGeneration
+    -> Algorithm.Fratar.TripAttraction
+    -> Data.Functor.Identity.Identity Algorithm.Fratar.ODMatrix
+  {- Arity: 4,
+     Strictness: <L,U(U)><S(S(S(SS(S))S(S))S(SSS)),1*U(U(U(U,U(U)),U(U)),U(U,U,U))><L,U(A,U(U,U,U))><L,U(A,U(U,U,U))>m,
+     Inline: [0],
+     Unfolding: InlineRule (4, True, False)
+                (\ (w :: Algorithm.Fratar.ConvergenceCriterion)
+                   (w1 :: Algorithm.Fratar.ODMatrix)
+                   (w2 :: Algorithm.Fratar.TripGeneration)
+                   (w3 :: Algorithm.Fratar.TripAttraction) ->
+                 case w1
+                        `cast`
+                      (Data.Array.Repa.Repr.Unboxed.D:R:ArrayUsha0[0] <Data.Array.Repa.Index.DIM2>_N <GHC.Types.Double>_N) of ww { Data.Array.Repa.Repr.Unboxed.AUnboxed ww1 ww2 ->
+                 case ww1 of ww3 { Data.Array.Repa.Index.:. ww4 ww5 ->
+                 case ww4 of ww6 { Data.Array.Repa.Index.:. ww7 ww8 ->
+                 case ww8 of ww9 { GHC.Types.I# ww10 ->
+                 case ww5 of ww11 { GHC.Types.I# ww12 ->
+                 case ww2
+                        `cast`
+                      (Data.Vector.Unboxed.Base.D:R:VectorDouble0[0] ; Data.Vector.Unboxed.Base.N:R:VectorDouble[0]) of ww13 { Data.Vector.Primitive.Vector ww14 ww15 ww16 ->
+                 case Algorithm.Fratar.$wfratar
+                        w
+                        ww7
+                        ww10
+                        ww12
+                        ww14
+                        ww15
+                        ww16
+                        w2
+                        w3 of ww17 { (#,#) ww18 ww19 ->
+                 (Data.Array.Repa.Repr.Unboxed.AUnboxed
+                    @ Data.Array.Repa.Index.DIM2
+                    @ GHC.Types.Double
+                    ww18
+                    ww19)
+                   `cast`
+                 (Sym (Data.Functor.Identity.N:Identity[0]
+                           (Data.Array.Repa.Repr.Unboxed.D:R:ArrayUsha0[0] <Data.Array.Repa.Index.DIM2>_N <GHC.Types.Double>_N))) } } } } } } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
