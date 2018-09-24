@@ -59,7 +59,8 @@ makeLinkCsv :: V.Vector LinkCsvOut -> LinkCsv
 makeLinkCsv lcos = foldr f [] lcos
   where
     f (LinkCsvOut org dest dist highway oneway bridge width)
-      | isJust oneway = V.cons linkOD
+      | oneway == Just "yes" = V.cons linkOD
+      | oneway == Just "-1" = V.cons linkDO
       | otherwise = V.cons linkOD . V.cons linkDO
       where
         linkOD = (Link (Edge (org :->: dest)) dist, (highway, bridge, width))
