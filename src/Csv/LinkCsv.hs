@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedLists   #-}
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE ViewPatterns #-}
+--{-# LANGUAGE ViewPatterns #-}
 
 module Csv.LinkCsv where
 
@@ -56,7 +56,7 @@ type LinkCsv =
   --Map.Map OD (Dist, LinkCond)
 
 makeLinkCsv :: V.Vector LinkCsvOut -> LinkCsv
-makeLinkCsv lcos = foldr f [] lcos
+makeLinkCsv = foldr f []
   where
     f (LinkCsvOut org dest dist highway oneway bridge width)
       | oneway == Just "yes" = V.cons linkOD

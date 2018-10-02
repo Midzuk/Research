@@ -139,7 +139,7 @@ shortestPath n_ = go n_ Map.empty
         n1 = Map.delete od n
         odls1 = Map.assocs $ Map.filter (isNextLink l) p
         n2 = foldr (\(od1, l1) n2 -> Map.insertWith min (od <> od1) (l <> l1) n2) n1 odls1 ----
-        odls2 = Map.assocs $ Map.filter (flip isNextLink l) p
+        odls2 = Map.assocs $ Map.filter (`isNextLink` l) p
         n3 = foldr (\(od1, l1) n2 -> Map.insertWith min (od1 <> od) (l1 <> l) n2) n2 odls2 ----
 
 
@@ -152,8 +152,8 @@ invertOD (n1 :->: n2) = n2 :->: n1
 
 overlap :: Graph -> Graph -> Bool
 overlap (Edge od1) (Edge od2) = od1 == od2
-overlap (Edge od) g@(Graph v) = elem od v
-overlap g@(Graph v) (Edge od) = elem od v
+overlap (Edge od) g@(Graph v) = od `elem` v
+overlap g@(Graph v) (Edge od) = od `elem` v
 overlap g1@(Graph v1) g2@(Graph v2) = any (`elem` v1) v2
 
 overlapLink :: Link -> Link -> Bool
