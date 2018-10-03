@@ -13,17 +13,17 @@ import qualified System.Directory     as Dir
 
 type Node = Int
 
-type Lat = Double
 type Long = Double
+type Lat = Double
 
-data NodeCsvOut = NodeCsvOut Node Lat Long deriving Show
+data NodeCsvOut = NodeCsvOut Node Long Lat deriving Show
 
 instance FromNamedRecord NodeCsvOut where
   parseNamedRecord m =
     NodeCsvOut
       <$> m .: "nodeId"
-      <*> m .: "x" --Latitude
-      <*> m .: "y" --Longitude
+      <*> m .: "x" --Longitude
+      <*> m .: "y" --Latitude
 
 decodeNodeCsv :: FilePath -> IO NodeCsv
 decodeNodeCsv fp = do
@@ -34,27 +34,16 @@ decodeNodeCsv fp = do
 
 
 type NodeCsv =
-  Map.Map Node (Lat, Long)
+  Map.Map Node (Long, Lat)
 
 makeNodeCsv :: V.Vector NodeCsvOut -> NodeCsv
-makeNodeCsv ncos = foldr f Map.empty ncos
+makeNodeCsv = foldr f Map.empty
   where
-    f (NodeCsvOut n lat long) = Map.insert n (lat, long)
+    f (NodeCsvOut n long lat) = Map.insert n (long, lat)
 
 encodeNodeCsv :: NodeCsv -> String
 encodeNodeCsv nc = 
-  "Node,Lat,Long"
+  "Node,Long,Lat"
     <> Map.foldrWithKey
-      (\node_ (lat_, long_) str_ -> str_ <> "\n" <> show node_ <> "," <> show lat_ <> "," <> show long_)
+      (\node_ (long_, lat_) str_ -> str_ <> "\n" <> show node_ <> "," <> show long_ <> "," <> show lat_)
         "" nc
-
-{-
-type NodeCsvMap =
-  Map.Map Node (Lat, Long)
-
-makeNodeCsvMap :: V.Vector LinkCsv -> LinkCsvMap
-makeNodeCsvMap ls = V.foldr f Map.empty ls
-  where
-    f (LinkCsv org dest dist highway oneway bridge width) =
-      Map.insert (org :->: dest) (dist, (highway, oneway, bridge, width))
--}
