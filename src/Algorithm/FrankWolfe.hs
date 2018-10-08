@@ -25,7 +25,7 @@ type LinkParameter = Map.Map OD (Time, Capacity, Alpha, Beta)
 allOrNothing :: Trip -> Network -> LinkFlow
 allOrNothing t n = go t Map.empty
   where
-    p = shortestPath n
+    p = shortestNetwork n
 
     go :: Trip -> LinkFlow -> LinkFlow
     go (Map.null -> True) lf = lf

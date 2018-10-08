@@ -29,6 +29,7 @@ dependencies:
 - cassava
 - text
 - directory
+- split
 
 library:
   source-dirs: src

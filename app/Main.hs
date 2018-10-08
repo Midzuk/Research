@@ -1,16 +1,23 @@
 {-# LANGUAGE ViewPatterns #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedLists   #-}
 module Main where
 
-import           Algorithm.FrankWolfe
+--import           Algorithm.FrankWolfe
 import           Algorithm.Search
-import           Csv.LinkCsv          (decodeLinkCsv, makeLinkCsv, encodeLinkCsv)
+import           Csv.LinkCsv          (decodeLinkCsv, makeLinkCsv, encodeLinkCsv, LinkWithCond)
 import           Csv.NodeCsv          (decodeNodeCsv, makeNodeCsv, encodeNodeCsv)
-import qualified Data.Map.Strict      as Map
+import qualified Data.Map.Lazy        as Map
 import qualified Data.Set             as Set
 import           Network
 import           System.IO.Unsafe
-import Csv.NetworkCsv (NetworkCsv(..), simplifyNetworkCsv)
+import           Csv.NetworkCsv (NetworkCsv(..), simplifyNetworkCsv, makeNetwork)
 import qualified System.Directory as Dir
+import Data.List (find)
+import System.Environment (getArgs)
+import Data.Vector as V (filter, Vector)
+import qualified Data.Text            as T
+--import Data.List.Split (splitOn)
 
 
 --import           System.Random
@@ -18,11 +25,29 @@ import qualified System.Directory as Dir
 
 main :: IO ()
 main = do
-  lc <- decodeLinkCsv "/temporary/output_links.csv"
-  nc <- decodeNodeCsv "/temporary/output_nodes.csv"
-  let nwc = NetworkCsv lc nc
-  let sn = makeNetwork $ simplifyNetworkCsv nwc
-  let p = shortestPath sn
+  args <- getArgs
+  let [latOrg, lonOrg, latDest, lonDest] = read <$> args
+
+  lc <- decodeLinkCsv "/temporary/temp_links.csv"
+  nc <- decodeNodeCsv "/temporary/temp_nodes.csv"
+ 
+  let lc1 = V.filter (\(_, Just _highway) -> _highway /= "footway" && _highway /= "service") lc
+  let nwc = NetworkCsv lc1 nc
+  let snwc@(NetworkCsv slc snc) = simplifyNetworkCsv nwc
+
+  cd <- Dir.getCurrentDirectory
+  writeFile (cd <> "/output/simple_link.csv") $ encodeLinkCsv slc
+  writeFile (cd <> "/output/simple_node.csv") $ encodeNodeCsv snc
+
+  let nodeOrg = nearestNode (latOrg, lonOrg) snwc
+  let nodeDest = nearestNode (latDest, lonDest) snwc
+
+  let snw = makeNetwork snwc
+  let p = shortestNetwork snw
+  let Just (Link g dist) = p Map.!? (nodeOrg :->: nodeDest)
+
+  print(show dist <> "," <> show nodeOrg <> "," <> show nodeDest <> "," <> show g)
+
 
   --let NetworkCsv slc snc = simplifyNetworkCsv nwc
   
@@ -32,6 +57,19 @@ main = do
   --print $ shortestPath network
   --print $ frankWolfe 0.01 trip linkParameter
 --searchMin 0.01 (\x -> (x - 1) ^ 2 + 12) (0,10)
+
+type Lat = Double
+type Lon = Double
+type Coord = (Lat, Lon)
+
+nearestNode :: Coord -> NetworkCsv -> Node
+nearestNode (lat, lon) (NetworkCsv _ nc) =
+  case find ((distMin ==) . snd) ndList of
+    Just (node, _) -> node
+  where
+    nd = (\(_lat, _lon) -> abs (_lat - lat) + abs (_lon - lon)) <$> nc
+    distMin = minimum nd
+    ndList = Map.toList nd
 
 {-
 trip :: Trip

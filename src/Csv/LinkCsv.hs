@@ -7,11 +7,11 @@ module Csv.LinkCsv where
 import qualified Data.ByteString.Lazy as B
 import           Data.Csv             (FromNamedRecord (..), Header,
                                        decodeByName, (.:))
-import qualified Data.Map.Strict      as Map
+import qualified Data.Map.Lazy        as Map
 import           Data.Maybe           (isJust)
 import qualified Data.Text            as T
 import qualified Data.Vector          as V
-import           Network              (Graph (..), Link (..), OD (..), composeLink, compose)
+import           Network              (Graph (..), Link (..), OD (..), composeLink, compose, showMaybe)
 import qualified System.Directory     as Dir
 
 type Node = Int
@@ -66,10 +66,6 @@ makeLinkCsv = foldr f []
       where
         linkOD = (Link (Edge (org :->: dest)) dist, highway) -- (highway, bridge, width))
         linkDO = (Link (Edge (dest :->: org)) dist, highway) -- (highway, bridge, width))
-
-showMaybe :: Show a => Maybe a -> String
-showMaybe (Just a) = show a
-showMaybe Nothing = ""
 
 encodeLinkCsv :: LinkCsv -> String
 encodeLinkCsv lc =

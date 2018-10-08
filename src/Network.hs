@@ -125,8 +125,8 @@ isNextOD (n1 :->: n2) (n3 :->: n4) = n2 == n3 && n1 /= n4
 
 
 
-shortestPath :: Network -> Path
-shortestPath n_ = go n_ Map.empty
+shortestNetwork :: Network -> Network
+shortestNetwork n_ = go n_ Map.empty
   where
     go :: Network -> Path -> Path
     go (Map.null -> True) p = p
@@ -158,3 +158,7 @@ overlap g1@(Graph v1) g2@(Graph v2) = any (`elem` v1) v2
 
 overlapLink :: Link -> Link -> Bool
 overlapLink (Link g1 _) (Link g2 _) = overlap g1 g2
+
+showMaybe :: Show a => Maybe a -> String
+showMaybe (Just a) = show a
+showMaybe Nothing = ""

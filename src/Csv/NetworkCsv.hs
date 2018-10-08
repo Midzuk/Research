@@ -10,11 +10,11 @@ import           Control.Monad.State.Strict (State, evalState, execState,
                                              runState, state, put, get)
 import           Csv.LinkCsv                (LinkCsv, LinkCond, LinkWithCond)
 import           Csv.NodeCsv                (NodeCsv)
-import qualified Data.Map.Strict            as Map
+import qualified Data.Map.Lazy              as Map
 import qualified Data.Vector                as V
 import           Network
-import           Data.Maybe (fromJust)
-import qualified Data.Set as Set
+import           Data.Maybe                 (fromJust)
+import qualified Data.Set                   as Set
 --
 
 data NetworkCsv = NetworkCsv LinkCsv NodeCsv deriving (Show)
@@ -94,4 +94,4 @@ totalDistance :: LinkCsv -> Double
 totalDistance = foldr (\(Link _ dist, _) total -> total + dist) 0
 
 makeNetwork :: NetworkCsv -> Network
-makeNetwork (NetworkCsv lc _) = foldr (\(Link g@(Edge od) dist, _) n -> Map.insertWith min od (Link g dist) n) Map.empty lc
+makeNetwork (NetworkCsv lc _) = foldr (\(Link g@(compose -> od) dist, _) n -> Map.insertWith min od (Link g dist) n) Map.empty lc
