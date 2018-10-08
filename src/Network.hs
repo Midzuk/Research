@@ -5,7 +5,7 @@
 --{-# LANGUAGE TypeSynonymInstances #-}
 {-# LANGUAGE ViewPatterns    #-}
 
-module Link where
+module Network where
 
 import qualified Data.Map.Strict as Map
 import           Data.Semigroup
@@ -111,7 +111,7 @@ isNextGraph :: Graph -> Graph -> Bool
 isNextGraph (Edge od1) (Edge od2)       = isNextOD od1 od2
 isNextGraph (Edge od) g@(Graph v)       = isNextOD od (compose g) && notElem (invertOD od) v -- && V.notElem od v
 isNextGraph g@(Graph v) (Edge od)       = isNextOD (compose g) od && notElem (invertOD od) v -- && V.notElem od v
-isNextGraph g1@(Graph v1) g2@(Graph v2) = isNextOD (compose g1) (compose g2) && (not $ any (`elem` v1) v2) && (not $ any (`elem` v1) (invertOD <$> v2))
+isNextGraph g1@(Graph v1) g2@(Graph v2) = isNextOD (compose g1) (compose g2) && not (any (`elem` v1) v2) && not (any (`elem` v1) (invertOD <$> v2))
 
 --Set.null (Set.intersection (nodeSet g1) (nodeSet g2))
 {-

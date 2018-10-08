@@ -12,7 +12,7 @@ import           Csv.LinkCsv                (LinkCsv, LinkCond, LinkWithCond)
 import           Csv.NodeCsv                (NodeCsv)
 import qualified Data.Map.Strict            as Map
 import qualified Data.Vector                as V
-import           Link
+import           Network
 import           Data.Maybe (fromJust)
 import qualified Data.Set as Set
 --
@@ -92,3 +92,6 @@ longestLinkCsv lc =
 
 totalDistance :: LinkCsv -> Double
 totalDistance = foldr (\(Link _ dist, _) total -> total + dist) 0
+
+makeNetwork :: NetworkCsv -> Network
+makeNetwork (NetworkCsv lc _) = foldr (\(Link g@(Edge od) dist, _) n -> Map.insertWith min od (Link g dist) n) Map.empty lc

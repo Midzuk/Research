@@ -6,7 +6,7 @@ import qualified Data.Map.Strict  as Map
 import qualified Data.Set         as Set
 import qualified Data.Vector      as V
 import           Debug.Trace
-import           Link
+import           Network
 
 
 

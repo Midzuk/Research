@@ -7,7 +7,7 @@ import           Csv.LinkCsv          (decodeLinkCsv, makeLinkCsv, encodeLinkCsv
 import           Csv.NodeCsv          (decodeNodeCsv, makeNodeCsv, encodeNodeCsv)
 import qualified Data.Map.Strict      as Map
 import qualified Data.Set             as Set
-import           Link
+import           Network
 import           System.IO.Unsafe
 import Csv.NetworkCsv (NetworkCsv(..), simplifyNetworkCsv)
 import qualified System.Directory as Dir
@@ -18,26 +18,28 @@ import qualified System.Directory as Dir
 
 main :: IO ()
 main = do
-  lc <- decodeLinkCsv "output_links.csv"
-  nc <- decodeNodeCsv "output_nodes.csv"
+  lc <- decodeLinkCsv "/temporary/output_links.csv"
+  nc <- decodeNodeCsv "/temporary/output_nodes.csv"
   let nwc = NetworkCsv lc nc
-  let NetworkCsv slc snc = simplifyNetworkCsv nwc
+  let sn = makeNetwork $ simplifyNetworkCsv nwc
+  let p = shortestPath sn
+
+  --let NetworkCsv slc snc = simplifyNetworkCsv nwc
   
-  cd <- Dir.getCurrentDirectory
-  writeFile (cd <> "/output/simpleLink.csv") $ encodeLinkCsv slc
-  writeFile (cd <> "/output/simpleNode.csv") $ encodeNodeCsv snc
+  --cd <- Dir.getCurrentDirectory
+  --writeFile (cd <> "/output/simpleLink.csv") $ encodeLinkCsv slc
+  --writeFile (cd <> "/output/simpleNode.csv") $ encodeNodeCsv snc
   --print $ shortestPath network
   --print $ frankWolfe 0.01 trip linkParameter
 --searchMin 0.01 (\x -> (x - 1) ^ 2 + 12) (0,10)
 
+{-
 trip :: Trip
 trip =
   Map.fromList
     [ (1 :->: 3, 5)
     --, (2 :->: 4, 10)
     ]
-
-
 
 network :: Network
 network = Map.union n1 n2
@@ -56,7 +58,6 @@ network = Map.union n1 n2
 linkParameter :: LinkParameter
 linkParameter = makeLinkParameter 1 10 2 network
 
-{-
 main = go $ shortestPath graph'
 
   where

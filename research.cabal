@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e511a46841700e1554c15edfe2bd53c764127eb2a8057dd7166727e5e0cc9929
+-- hash: 226ee35f197da65a7585d0c26983fcf6cacc31bdee3e767cd7ba281bcacba491
 
 name:           research
 version:        0.1.0.0
@@ -29,11 +29,10 @@ library
       Algorithm.FrankWolfe
       Algorithm.Fratar
       Algorithm.Search
-      Csv.Csv
       Csv.LinkCsv
       Csv.NetworkCsv
       Csv.NodeCsv
-      Link
+      Network
   other-modules:
       Paths_research
   hs-source-dirs:

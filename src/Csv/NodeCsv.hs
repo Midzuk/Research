@@ -13,37 +13,38 @@ import qualified System.Directory     as Dir
 
 type Node = Int
 
-type Long = Double
 type Lat = Double
+type Lon = Double
 
-data NodeCsvOut = NodeCsvOut Node Long Lat deriving Show
+-- とりあえず信号機は無視
+data NodeCsvOut = NodeCsvOut Node Lat Lon deriving Show
 
 instance FromNamedRecord NodeCsvOut where
   parseNamedRecord m =
     NodeCsvOut
-      <$> m .: "nodeId"
-      <*> m .: "x" --Longitude
-      <*> m .: "y" --Latitude
+      <$> m .: "node_id"
+      <*> m .: "lat"
+      <*> m .: "lon"
 
 decodeNodeCsv :: FilePath -> IO NodeCsv
 decodeNodeCsv fp = do
   cd <- Dir.getCurrentDirectory
-  bs <- B.readFile (cd <> "/data/" <> fp)
+  bs <- B.readFile (cd <> fp)
   let Right (_, ls) = decodeByName bs :: Either String (Header, V.Vector NodeCsvOut)
   return $ makeNodeCsv ls
 
 
 type NodeCsv =
-  Map.Map Node (Long, Lat)
+  Map.Map Node (Lat, Lon)
 
 makeNodeCsv :: V.Vector NodeCsvOut -> NodeCsv
 makeNodeCsv = foldr f Map.empty
   where
-    f (NodeCsvOut n long lat) = Map.insert n (long, lat)
+    f (NodeCsvOut n lat lon) = Map.insert n (lat, lon)
 
 encodeNodeCsv :: NodeCsv -> String
 encodeNodeCsv nc = 
-  "Node,Long,Lat"
+  "node_id,lat,lon"
     <> Map.foldrWithKey
-      (\node_ (long_, lat_) str_ -> str_ <> "\n" <> show node_ <> "," <> show long_ <> "," <> show lat_)
+      (\node_ (lat_, lon_) str_ -> str_ <> "\n" <> show node_ <> "," <> show lat_ <> "," <> show lon_)
         "" nc
