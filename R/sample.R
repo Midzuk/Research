@@ -135,7 +135,7 @@ User <- R6Class("User",
 
 
 # car
-Car <- 
+# Car <- 
 
 # 暫定データ
 # facility
